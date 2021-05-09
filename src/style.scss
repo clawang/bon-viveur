@@ -1,0 +1,138 @@
+@font-face {
+  	font-family: Maison Neue;
+  	src: url('MaisonNeue-Book.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  	font-family: Ivy Mode Regular;
+  	src: url('IvyMode-Regular.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  	font-family: Ivy Mode Light Italic;
+  	src: url('IvyMode-LightItalic.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  	font-family: Eksell Display;
+  	src: url('Eksell-Display-Small.otf'); /* IE9 Compat Modes */
+}
+
+* {
+	font-family: Maison Neue;
+	letter-spacing: 0.5px;
+	background-color: #f1e5d5;
+}
+
+h1 {
+	font-family: Ivy Mode Regular;
+	letter-spacing: 0.3em;
+	font-size: 3em;
+	margin: 0;
+}
+
+h2 {
+	font-family: Ivy Mode Light Italic;
+	letter-spacing: 0.3em;
+	font-style: italic;
+	margin: 0;
+	font-size: 1.3em;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+form {
+	margin: 2em 0;
+}
+
+select {
+	padding: 5px;
+}
+
+.App {
+	padding: 3em;
+}
+
+.App-header {
+	text-align: center;
+	padding: 1em 0;
+}
+
+.eateries-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1200px;
+	margin: 20px auto;
+}
+
+.eatery {
+	width: 25%;
+
+	h3 {
+		font-family: Eksell Display;
+		font-weight: 100;
+		letter-spacing: 1px;
+		font-size: 22px;
+		margin-bottom: 0.5em;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	.eatery-cuisines {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: #333;
+		font-size: 12px;
+	}
+}
+
+.cuisines {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	//box-sizing: border-box;
+	
+	.cuisine-title {
+		font-size: 18px;
+		padding: 10px;
+		margin: 0;
+		cursor: pointer;
+	}
+
+	form {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	label {
+		width: 30%;
+		max-width: 200px;
+		margin: 0 1em;
+		font-size: 0.6em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	input[type="reset"] {
+		height: 28px;
+		margin-left: 0.5em;
+		background: black;
+		color: white;
+		border:none;
+	}
+
+	// label:nth-of-type(1) {
+	// 	margin-left: 0;
+	// }
+
+	select {
+		width: 100%;
+		margin-top: 0.2em;
+	}
+}
