@@ -122,16 +122,16 @@ select {
 	input[type="reset"] {
 		height: 28px;
 		margin-left: 0.5em;
-		background: black;
-		color: white;
-		border:none;
+		background: #f1e5d5;
+		border:1px solid black;
 		cursor: pointer;
+		color: black;
 		transition: 0.5s linear;
 
 		&:hover {
-			background: #f1e5d5;
 			border: 1px solid black;
-			color: black;
+			background: black;
+			color: white;
 		}
 	}
 
@@ -142,6 +142,7 @@ select {
 	select {
 		width: 100%;
 		margin-top: 0.2em;
+		border: 1px solid black;
 	}
 }
 
