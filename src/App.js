@@ -74,40 +74,40 @@ function App() {
 				<h1>BON VIVEUR</h1>
 				<h2>New York City</h2>
 				<div onClick={() => setList(!list)} className='nav'><img src={list ? mapIcon : listIcon} style={{width:'100%'}}/></div>
+				<div className="cuisines">
+					<form>
+						<label>
+							Cuisine
+							<select value={filters.cuisine} name="cuisine" onChange={handleChange}>
+							  {cuisines.map(c => <option value={c}>{c}</option>)}
+							</select>
+						</label>
+						<label>
+							Category
+							<select value={filters.category} name="category" onChange={handleChange}>
+							  {categories.map(c => <option value={c}>{c}</option>)}
+							</select>
+						</label>
+						<label>
+							Location
+							<select value={filters.location} name="location" onChange={handleChange}>
+							  {locations.map(c => <option value={c}>{c}</option>)}
+							</select>
+						</label>
+						<label>
+							Price
+							<select value={filters.price} name="price" onChange={handleChange}>
+							  <option value="All">All</option>
+							  <option value="1">$</option>
+							  <option value="2">$$</option>
+							  <option value="3">$$$</option>
+							  <option value="4">$$$$</option>
+							</select>
+						</label>
+						<input type="reset" onClick={reset}/>
+					</form>
+				</div>
 			</header>
-			<div className="cuisines">
-				<form>
-					<label>
-						Cuisine
-						<select value={filters.cuisine} name="cuisine" onChange={handleChange}>
-						  {cuisines.map(c => <option value={c}>{c}</option>)}
-						</select>
-					</label>
-					<label>
-						Category
-						<select value={filters.category} name="category" onChange={handleChange}>
-						  {categories.map(c => <option value={c}>{c}</option>)}
-						</select>
-					</label>
-					<label>
-						Location
-						<select value={filters.location} name="location" onChange={handleChange}>
-						  {locations.map(c => <option value={c}>{c}</option>)}
-						</select>
-					</label>
-					<label>
-						Price
-						<select value={filters.price} name="price" onChange={handleChange}>
-						  <option value="All">All</option>
-						  <option value="1">$</option>
-						  <option value="2">$$</option>
-						  <option value="3">$$$</option>
-						  <option value="4">$$$$</option>
-						</select>
-					</label>
-					<input type="reset" onClick={reset}/>
-				</form>
-			</div>
 			{loaded ? 
 				(
 					list ? 

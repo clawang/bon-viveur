@@ -244,7 +244,7 @@ function MapMode(props) {
 				  {
 				    locations.map((r, i) => {
 						return (
-							<CustomMarker res={locations[i]} index={i} selectedMarker={info.index} setInfo={setInfo} />
+							<CustomMarker res={locations[i]} index={i} key={i} selectedMarker={info.index} setInfo={setInfo} />
 						);
 					})
 				  }
@@ -254,9 +254,11 @@ function MapMode(props) {
 			}
 		</div>
 	);
-
-	
 }
+
+const markerOp = {
+	collisionBehavior: 'REQUIRED_AND_HIDES_OPTIONAL'
+};
 
 function CustomMarker(props) {
 
@@ -314,7 +316,12 @@ function CustomMarker(props) {
 
 	return (
 		<div>
-			<Marker position={{lat: props.res.lat, lng: props.res.lng}} onClick={() => props.setInfo({open: true, index: index.current})} icon={{url: getUrl(), scaledSize: {width: 32, height: 32}}}>
+			<Marker 
+			  position={{lat: props.res.lat, lng: props.res.lng}} 
+			  onClick={() => props.setInfo({open: true, index: index.current})} 
+			  icon={{url: getUrl(), scaledSize: {width: 32, height: 32}}}
+			  options={markerOp}
+		  	>
 				{props.selectedMarker === index.current &&
 				<InfoWindow position={{lat: props.res.lat, lng: props.res.lng}} options={options}>
 					<Eatery res={props.res} />

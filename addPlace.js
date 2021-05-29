@@ -28,7 +28,7 @@ const getApi = (name) => {
         keyword: name,
         //inputtype: PlaceInputType.textQuery,
         location: { lat: 40.740, lng: -74.006 },
-        key: "AIzaSyAsBasMtERBic_FV-rLd7CULK6hbXXH5ro",
+        key: "AIzaSyBhdScuZ3mLQTX8xNCp2d7rQFDTjH2UR-A",
         radius: 5000,
         fields: ["name", "formatted_address", "geometry"]
       },

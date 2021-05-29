@@ -53,12 +53,13 @@ select {
 }
 
 .App {
-	padding: 3em;
+	//padding: 3em;
 }
 
 .App-header {
 	text-align: center;
-	padding: 1em 0;
+	//padding: 1em 0;
+	padding: 4em 3em 1em 3em;
 }
 
 .nav {
@@ -68,6 +69,7 @@ select {
 	font-size: 12px;
 	width: 50px;
 	cursor: pointer;
+	z-index: 50;
 }
 
 .eateries-wrapper {
@@ -75,7 +77,8 @@ select {
 	flex-wrap: wrap;
 	width: 100%;
 	max-width: 1200px;
-	margin: 20px auto;
+	margin: 0 auto 20px;
+	padding: 0 2em;
 }
 
 .eatery {
@@ -117,7 +120,8 @@ select {
 .cuisines {
 	width: 100%;
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 3em auto 0;
+	text-align: left;
 	//box-sizing: border-box;
 	
 	.cuisine-title {
@@ -205,6 +209,10 @@ select {
   	.eatery {
   		width: 70%;
   		margin: 0 auto;
+  	}
+
+  	.nav {
+  		width: 40px;
   	}
 
   	.cuisines {
