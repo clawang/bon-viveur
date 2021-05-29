@@ -21,6 +21,9 @@
 * {
 	font-family: Maison Neue;
 	letter-spacing: 0.5px;
+}
+
+html {
 	background-color: #f1e5d5;
 }
 
@@ -58,6 +61,15 @@ select {
 	padding: 1em 0;
 }
 
+.nav {
+	position: fixed;
+	right: 3em;
+	top:3em;
+	font-size: 12px;
+	width: 50px;
+	cursor: pointer;
+}
+
 .eateries-wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -87,6 +99,19 @@ select {
 		color: #333;
 		font-size: 12px;
 	}
+}
+
+.gm-style-iw .eatery {
+	width: 100%;
+	max-width: 250px;
+
+	h3 {
+		font-size:18px;
+	}
+}
+
+.gm-style .gm-style-iw-c {
+	border-radius: 0;
 }
 
 .cuisines {
@@ -143,6 +168,7 @@ select {
 		width: 100%;
 		margin-top: 0.2em;
 		border: 1px solid black;
+		background: #f1e5d5;
 	}
 }
 
