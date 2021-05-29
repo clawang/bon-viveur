@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bon-viveur/static/css/main.b56f22c0.chunk.css",
-    "main.js": "/bon-viveur/static/js/main.c3fcb2df.chunk.js",
-    "main.js.map": "/bon-viveur/static/js/main.c3fcb2df.chunk.js.map",
+    "main.js": "/bon-viveur/static/js/main.eb92de68.chunk.js",
+    "main.js.map": "/bon-viveur/static/js/main.eb92de68.chunk.js.map",
     "runtime-main.js": "/bon-viveur/static/js/runtime-main.1263c65c.js",
     "runtime-main.js.map": "/bon-viveur/static/js/runtime-main.1263c65c.js.map",
     "static/js/2.76cb0077.chunk.js": "/bon-viveur/static/js/2.76cb0077.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.1263c65c.js",
     "static/js/2.76cb0077.chunk.js",
     "static/css/main.b56f22c0.chunk.css",
-    "static/js/main.c3fcb2df.chunk.js"
+    "static/js/main.eb92de68.chunk.js"
   ]
 }
