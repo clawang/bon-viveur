@@ -52,6 +52,12 @@ select {
 	padding: 5px;
 }
 
+.no-scroll {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
 .App {
 	//padding: 3em;
 }
@@ -79,6 +85,104 @@ select {
 	max-width: 1200px;
 	margin: 0 auto 20px;
 	padding: 0 2em;
+	box-sizing: border-box;
+}
+
+.dialog-wrapper {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 40;
+	background-color: rgba(0,0,0,0.1);
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dialog {
+	width: 500px;
+	height: 300px;
+	//margin: 10% auto;
+	padding: 3em;
+	background-color: #f1e5d5;
+	border: 1px solid black;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.dialog-content {
+		width: 100%;
+	}
+
+	h3 {
+		font-family: Eksell Display;
+		font-weight: 100;
+		letter-spacing: 1px;
+		font-size: 22px;
+		margin-bottom: 0.5em;
+		margin-top: 0;
+	}
+
+	h4 {
+		//font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: #333;
+		font-size: 12px;
+	}
+
+	a {
+		color: black;
+		text-decoration: none;
+	}
+
+	.close {
+		position: absolute;
+		top: 0.5em;
+		right: 1em;
+		cursor: pointer;
+	}
+
+	.closed {
+		color: red;
+		text-transform: uppercase;
+		font-style: italic;
+	}
+
+	.star-container {
+		display: flex;
+
+		p {margin: 3px;}
+
+		.star-wrapper {
+			margin-right: 0.3em;
+		}
+
+		.star {
+			width: 17px;
+			margin: 1px;
+		}
+	}
+
+	.dialog-info {
+		display: flex;
+		font-size: 14px;
+		//margin: 0.7em 0;
+		border-bottom: 1px solid black;
+		padding: 1em 0; 
+
+		&:nth-of-type(1) {
+			border-top: 1px solid black;
+		}
+
+		p {margin: 3px 5px;}
+		img {width: 20px; height: 20px; margin-right: 5px;}
+	}
+	
 }
 
 .eatery {
@@ -90,6 +194,7 @@ select {
 		letter-spacing: 1px;
 		font-size: 22px;
 		margin-bottom: 0.5em;
+		cursor: pointer;
 	}
 
 	p {
@@ -176,6 +281,34 @@ select {
 	}
 }
 
+.map-container {
+	width:100%;
+	height: 700px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-wrapper {
+	width: 150px;
+	height: 7px;
+	border: 1px solid black;
+	position: relative;
+
+	.loading {
+		background-color: black;
+		height: 7px;
+		animation: slide 2s infinite;
+		width: 150px;
+		transform-origin: left center;
+	}
+}
+
+@keyframes slide {
+	0% {transform: scaleX(0)}
+	100% {transform: scaleX(1)}
+}
+
 @media only screen and (max-width: 1010px) {
 	.eatery { 
 		width: 33%;
@@ -228,5 +361,9 @@ select {
   				margin: 1em 0;
   			}
   		}
+  	}
+
+  	.dialog {
+  		width: 70%;
   	}
 }

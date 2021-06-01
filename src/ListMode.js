@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {extractProp} from './parseData';
+import Loading from './Loading';
 
 function ListMode(props) {
 
@@ -13,7 +14,11 @@ function ListMode(props) {
 
 	return (
 		<div className="eateries-wrapper">
-			{curRes.map(res => <Eatery res={res} />)}
+			{props.loaded ? 
+				curRes.map(res => <Eatery res={res} fetchData={props.fetchData} />)
+				:
+				<Loading />
+			}
 		</div>
 	);
 }
@@ -30,7 +35,7 @@ function Eatery(props) {
 
 	return (
 		<div className="eatery">
-			<h3>{props.res.name}</h3>
+			<h3 onClick={() => props.fetchData(props.res)}>{props.res.name}</h3>
 			<p className="eatery-cuisines">{props.res.cuisine.map((c, i) => {
 				if(i === 0) return c;
 				return ", " + c;

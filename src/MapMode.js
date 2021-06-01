@@ -2,10 +2,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 import {Eatery} from './ListMode';
+import Loading from './Loading';
 
 const containerStyle = {
   width: '100%',
-  height: '600px'
+  height: '700px'
 };
 
 const mapStyle = [
@@ -213,7 +214,7 @@ function MapMode(props) {
 	}, [props.restaurants]);
 
 	const { isLoaded, loadError } = useJsApiLoader({
-		googleMapsApiKey: "AIzaSyAsBasMtERBic_FV-rLd7CULK6hbXXH5ro",
+		googleMapsApiKey: `${process.env.REACT_APP_GOOGLE_API_KEY}`,
 		libraries: ['places']
 		// ...otherOptions
 	});
@@ -231,8 +232,8 @@ function MapMode(props) {
     }
 
 	return (
-		<div style={{width:'100%', height: '600px'}}>
-			{isLoaded ? 
+		<div className="map-container">
+			{(isLoaded && props.loaded) ? 
 				<GoogleMap
 				  center={nyc}
 				  zoom={14}
@@ -240,17 +241,16 @@ function MapMode(props) {
 				  onLoad={onLoad}
 				  options={options}
 				>
-					
 				  {
 				    locations.map((r, i) => {
 						return (
-							<CustomMarker res={locations[i]} index={i} key={i} selectedMarker={info.index} setInfo={setInfo} />
+							<CustomMarker res={locations[i]} index={i} key={i} selectedMarker={info.index} setInfo={setInfo} fetchData={props.fetchData} />
 						);
 					})
 				  }
 				</GoogleMap>
 			:
-				<Spinner />
+				<Loading />
 			}
 		</div>
 	);
@@ -324,16 +324,12 @@ function CustomMarker(props) {
 		  	>
 				{props.selectedMarker === index.current &&
 				<InfoWindow position={{lat: props.res.lat, lng: props.res.lng}} options={options}>
-					<Eatery res={props.res} />
+					<Eatery res={props.res} fetchData={props.fetchData} />
 				</InfoWindow>
 				}
 			</Marker>
 		</div>
 	);
-}
-
-function Spinner() {
-	return (<h2>Loading...</h2>);
 }
 
 export default React.memo(MapMode);
