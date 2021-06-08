@@ -5,7 +5,7 @@ Laut,Thai|Southeast Asian,Lunch/Dinner,Chelsea,2,40.7376158,-73.9910302
 Thursday Kitchen,Korean,Drinks|Lunch/Dinner|Date Night,East Village,2,40.727566,-73.98380499999999
 Olio e Piu,Italian,Lunch/Dinner,Greenwich Village,2,40.73379449999999,-73.9997927
 uluh,Chinese,Lunch/Dinner,East Village,2,40.7293472,-73.9866141
-La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho,2,40.72346,-73.9963118
+La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.72346,-73.9963118
 Balthazar,French,Lunch/Dinner,Soho,3,40.722668,-73.99822979999999
 Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad,2,40.724,-73.9938
 Shoo Shoo Nolita,Mediterranean,Brunch,Nolita,2,40.7200534,-73.9962769
@@ -37,7 +37,8 @@ Egg Shop,American,Brunch,Nolita,2,40.7204333,-73.9951817
 The Rice Noodle,Chinese,Lunch/Dinner,Greenwich Village,1,40.7292194,-74.001466
 Jack's Wife Freda,Mediterranean,Brunch,Greenwich Village|Soho,3,40.7221234,-73.9975099
 Jacob's Pickles,American|Southern,Brunch|Lunch/Dinner,Upper West Side,2,40.786648,-73.9755259
-Mimi Cheng's Dumplings,Chinese,Quick Bites,Nolita,1,40.7307684,-73.98635569999999
+Mimi Cheng's Dumplings,Chinese,Quick Bites,Nolita|East Village,1,40.7307684,-73.98635569999999
+Mimi Cheng's Dumplings,Chinese,Quick Bites,Nolita|East Village,1,40.7205237,-73.9969249
 Pinto Garden,Thai,Brunch|Lunch/Dinner|Date Night,Greenwich Village,2,40.7348667,-73.99948189999999
 Soothr,Thai,Lunch/Dinner|Drinks|Date Night,East Village,2,40.7323017,-73.9873417
 Amigo by Nai,Mexican,Lunch/Dinner,East Village,2,40.72469479999999,-73.9908769
@@ -79,13 +80,13 @@ Sabai,Thai,Lunch/Dinner|Date Night,Nomad,2,40.744299,-73.98366399999999
 Blank Slate Coffee,Coffee,Cafe|Brunch,Nomad,2,40.7453125,-73.9846013
 Two Hands,Australian,Brunch,Noho|Tribeca|Nolita,2,40.7196965,-73.99602460000001
 The Grey Dog,American,Brunch,Greenwich Village|Nolita,2,40.7229542,-73.9956958
-TacoVision,Mexican,Lunch/Dinner,Midtown,2,40.7569163,-73.9678386
+TacoVision,Mexican,Lunch/Dinner,Midtown East,2,40.7569163,-73.9678386
 Risotteria Melotti,Italian,Lunch/Dinner,East Village,2,40.726649,-73.988342
 Goodnight Sonny,Bar,Bar|Drinks,East Village,2,40.7276202,-73.985094
 Ludlow Coffee Supply,Coffee,Cafe,LES,1,40.7216825,-73.9873972
 Kona Coffee Co,Coffee,Cafe,East Village,1,40.7258692,-73.9898686
 MUD,Coffee,Cafe,East Village,1,40.7291106,-73.98663359999999
-Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho,2,40.7202877,-73.9983933
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7202877,-73.9983933
 Urban Backyard,Coffee,Cafe,Nolita,1,40.7208064,-73.9966015
 Oh K-Dog,Korean,Quick Bites,LES,1,40.721048,-73.9880419
 Xi'an Famous Foods,Chinese,Quick Bites,Chelsea|Chinatown|Upper East Side,1,40.7150822,-73.997342
@@ -121,12 +122,12 @@ Keki Modern Cakes,Japanese|Bakery,Desserts,Chinatown|Koreatown,1,40.7468552,-73.
 Sweet Moment,Korean,Desserts,Little Italy,2,40.71763,-73.997147
 Clay Pot,Chinese,Lunch/Dinner,Greenwich Village,1,40.727915,-73.98665799999999
 Simo Pizza,Pizza,Quick Bites,Chelsea,1,40.7392955,-74.0087429
-Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Midtown|Gramercy,3,40.733047,-74.0028772
+Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Gramercy,3,40.733047,-74.0028772
 Little Cupcake Bakeshop,Bakery,Desserts,Nolita,1,40.72289910000001,-73.994847
 Spot Dessert Bar,Asian,Desserts,East Village,2,40.7293975,-73.988927
 Lazy Llama Coffee Bar,Coffee,Cafe,East Village,1,40.7235247,-73.9887414
 787 Coffee,Coffee,Cafe,East Village|Gramercy,1,40.72740230000001,-73.98884079999999
-Matto Espresso,Coffee,Cafe,Greenwich Village|FiDi|Midtown|Murray Hill|Upper East Side|Upper West Side,1,40.730268,-73.99395799999999
+Matto Espresso,Coffee,Cafe,Greenwich Village|FiDi|Midtown|Murray Hill|Upper East Side|Upper West Side|Midtown East,1,40.730268,-73.99395799999999
 Tonii's Fresh Rice Noodle,Chinese,Quick Bites,Chinatown,1,40.7156143,-73.99896199999999
 Sobaya,Japanese,Lunch/Dinner,East Village,2,40.7296064,-73.9879383
 Solas Bar,Bar,Drinks|Bar,East Village,2,40.7293818,-73.9880826
@@ -187,13 +188,13 @@ Raku,Japanese,Lunch/Dinner,South Village|East Village,2,40.72724789999999,-74.00
 Two Hands,Australian,Brunch,Noho|Tribeca|Nolita,2,40.7262603,-73.9956844
 Two Hands,Australian,Brunch,Noho|Tribeca|Nolita,2,40.7177931,-74.0054175
 The Grey Dog,American,Brunch,Greenwich Village|Nolita,2,40.7337952,-73.99319899999999
-Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho,2,40.7432672,-73.99013380000001
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7432672,-73.99013380000001
 Xi'an Famous Foods,Chinese,Quick Bites,Chelsea|Chinatown|Upper East Side,1,40.7401615,-74.0019196
-Xi'an Famous Foods,Chinese,Quick Bites,Chelsea|Chinatown|Upper East Side,1,40.7278374,-73.9855311
+Xi'an Famous Foods,Chinese,Quick Bites,Chelsea|Chinatown|Upper East Side,1,40.7722166,-73.9558052
 Laduree,French,Desserts|Brunch,Soho|Upper East Side,3,40.7708058,-73.96635859999999
 Keki Modern Cakes,Japanese|Bakery,Desserts,Chinatown|Koreatown,1,40.7164933,-73.998082
 787 Coffee,Coffee,Cafe,East Village|Gramercy,1,40.7263237,-73.9838523
-Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Midtown|Gramercy,3,40.7372552,-73.9882246
+Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Gramercy,3,40.7372552,-73.9882246
 Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Midtown|Gramercy,3,40.7338274,-74.0004206
 Matto Espresso,Coffee,Cafe,Greenwich Village|FiDi|Midtown|Murray Hill|Upper East Side|Upper West Side,1,40.751606,-73.9836916
 Matto Espresso,Coffee,Cafe,Greenwich Village|FiDi|Midtown|Murray Hill|Upper East Side|Upper West Side,1,40.7562467,-73.9798031
@@ -215,3 +216,10 @@ Morgenstern's,Ice Cream,Desserts|Quick Bites,South Village|LES,1,40.727261,-73.9
 Morgenstern's,Ice Cream,Desserts|Quick Bites,South Village|LES,1,40.721583,-73.99304339999999
 Jane,American,Brunch|Lunch/Dinner,South Village,2,40.727367675918664, -74.00025298304206
 ATLA,Mexican,Lunch/Dinner|Drinks,Noho,2,40.72721689999999,-73.99396879999999
+La Grande Boucherie,French,Lunch/Dinner|Date Night|Drinks,Midtown,3,40.7626274,-73.98084109999999
+Petite Boucherie,French,Cafe|Lunch/Dinner|Date Night,Greenwich Village,2,40.7338251,-74.0004194
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7234207,-74.0088517
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.728403, -74.007437
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.775544,-73.9567155
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7182525,-74.0082434
+Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7321442,-73.9958345

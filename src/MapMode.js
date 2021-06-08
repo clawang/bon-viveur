@@ -223,9 +223,9 @@ function MapMode(props) {
 		return <div>Map cannot be loaded right now, sorry.</div>
 	}
 
-	const onLoad = (mapInstance) => {
-        mapRef.current = mapInstance;
-    };
+	// const onLoad = (mapInstance) => {
+ //        mapRef.current = mapInstance;
+ //    };
 
     const popUp = (index) => {
     	setInfo({open: true, index: index});
@@ -238,7 +238,6 @@ function MapMode(props) {
 				  center={nyc}
 				  zoom={14}
 				  mapContainerStyle={containerStyle}
-				  onLoad={onLoad}
 				  options={options}
 				>
 				  {

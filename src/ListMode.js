@@ -15,7 +15,7 @@ function ListMode(props) {
 	return (
 		<div className="eateries-wrapper">
 			{props.loaded ? 
-				curRes.map(res => <Eatery res={res} fetchData={props.fetchData} />)
+				curRes.map((res, i) => <Eatery res={res} fetchData={props.fetchData} key={i} />)
 				:
 				<Loading />
 			}

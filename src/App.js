@@ -63,6 +63,7 @@ function App() {
 	}, [filters]);
 
 	useEffect(() => {
+		console.log('scroll change');
 		if(appState.open || appState.loading) {
 			document.body.classList.add('no-scroll');
 		} else {
@@ -90,9 +91,18 @@ function App() {
 		setFilters({cuisine: "All", category: "All", location: "All", price: "All"});
 	}
 
+	const random = (e) => {
+		e.preventDefault();
+		let tempArr = curRes;
+		let index = Math.floor(Math.random() * curRes.length);
+		setCurRes([tempArr[index]]);
+	}
+
 	const fetchData = (rest) => {
 		loadData(rest, appState, setAppState);
 	}
+
+	//console.log(appState);
 
 	return (
 		<div className="App">
@@ -131,6 +141,7 @@ function App() {
 							</select>
 						</label>
 						<input type="reset" onClick={reset}/>
+						<button onClick={random}>Random</button>
 					</form>
 				</div>
 			</header>
@@ -183,8 +194,8 @@ function PopUp(props) {
 						<h4>There was an error.</h4>
 						:
 						<div className="dialog-content">
-							{props.data.is_closed ? <p className="closed">permanently closed</p>: ''}
 							<h3>{props.data.name}</h3>
+							{props.data.is_closed ? <p className="closed">permanently closed</p>: ''}
 							<div className="star-container">
 								<div className="star-wrapper">
 									{stars.map((type, index) => <DisplayStar type={type} key={index} />)}
@@ -197,13 +208,14 @@ function PopUp(props) {
 								str += c.title;
 								return str;
 							})}</h4>
+
 							<div className="dialog-info">
 								<img src={pin} />
 								<p><a href={"https://maps.google.com/?q="+props.data.location.display_address[0] + ", " + props.data.location.display_address[1]} target="_blank">{props.data.location.display_address[0] + ", " + props.data.location.display_address[1]}</a></p>
 							</div>
 							<div className="dialog-info">
 								<img src={phone} />
-								<p>{props.data.display_phone}</p>
+								<p>{props.data.display_phone || "N/A"}</p>
 							</div>
 							<div className="dialog-info">
 								<img src={yelp} />

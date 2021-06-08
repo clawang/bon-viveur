@@ -151,6 +151,8 @@ select {
 		color: red;
 		text-transform: uppercase;
 		font-style: italic;
+		margin-top: 0;
+		margin-bottom: 0.5em;
 	}
 
 	.star-container {
@@ -253,7 +255,7 @@ select {
 		letter-spacing: 1px;
 	}
 
-	input[type="reset"] {
+	input[type="reset"], button {
 		height: 28px;
 		margin-left: 0.5em;
 		background: #f1e5d5;
@@ -323,9 +325,9 @@ select {
   				margin: 1em 0.5em;
   			}
 
-  			input[type="reset"] {
+  			input[type="reset"], button {
   				width: 96%;
-  				margin: 1em 0;
+  				margin: 1em 0 0;
   			}
   		}
   	}
@@ -356,9 +358,9 @@ select {
   				margin: 1em 0;
   			}
 
-  			input[type="reset"] {
+  			input[type="reset"], button {
   				width: 100%;
-  				margin: 1em 0;
+  				margin: 1em 0 0;
   			}
   		}
   	}

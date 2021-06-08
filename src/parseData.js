@@ -2,7 +2,7 @@ const parse = (str) => {
 	let data = str.split('\n').map(i=>i.split(','));
 	let headers = data.shift();
 	data = data.filter(d => d.length >= 7);
-	let output = data.map(d=>{
+	let output = data.map((d, index)=>{
 		let obj = {};
 		headers.map((h,i)=> {
 			if(headers[i] === "cuisine" || headers[i] === "location" || headers[i] === "category") {
@@ -15,6 +15,7 @@ const parse = (str) => {
 				obj[headers[i]] = str;
 			}
 		});
+		obj.id = index;
 		return obj;
 	});
 	return output;
