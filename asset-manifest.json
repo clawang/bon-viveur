@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/bon-viveur/static/css/main.8810d451.chunk.css",
-    "main.js": "/bon-viveur/static/js/main.d36a9da7.chunk.js",
-    "main.js.map": "/bon-viveur/static/js/main.d36a9da7.chunk.js.map",
+    "main.css": "/bon-viveur/static/css/main.25664f12.chunk.css",
+    "main.js": "/bon-viveur/static/js/main.7829ef01.chunk.js",
+    "main.js.map": "/bon-viveur/static/js/main.7829ef01.chunk.js.map",
     "runtime-main.js": "/bon-viveur/static/js/runtime-main.53bc0cb1.js",
     "runtime-main.js.map": "/bon-viveur/static/js/runtime-main.53bc0cb1.js.map",
-    "static/js/2.ea4ce327.chunk.js": "/bon-viveur/static/js/2.ea4ce327.chunk.js",
-    "static/js/2.ea4ce327.chunk.js.map": "/bon-viveur/static/js/2.ea4ce327.chunk.js.map",
+    "static/js/2.d9125489.chunk.js": "/bon-viveur/static/js/2.d9125489.chunk.js",
+    "static/js/2.d9125489.chunk.js.map": "/bon-viveur/static/js/2.d9125489.chunk.js.map",
     "static/js/3.6956957b.chunk.js": "/bon-viveur/static/js/3.6956957b.chunk.js",
     "static/js/3.6956957b.chunk.js.map": "/bon-viveur/static/js/3.6956957b.chunk.js.map",
     "index.html": "/bon-viveur/index.html",
-    "static/css/main.8810d451.chunk.css.map": "/bon-viveur/static/css/main.8810d451.chunk.css.map",
-    "static/js/2.ea4ce327.chunk.js.LICENSE.txt": "/bon-viveur/static/js/2.ea4ce327.chunk.js.LICENSE.txt",
+    "static/css/main.25664f12.chunk.css.map": "/bon-viveur/static/css/main.25664f12.chunk.css.map",
+    "static/js/2.d9125489.chunk.js.LICENSE.txt": "/bon-viveur/static/js/2.d9125489.chunk.js.LICENSE.txt",
     "static/media/style.scss": "/bon-viveur/static/media/MaisonNeue-Book.941caedd.ttf",
-    "static/media/Restaurants.52f60537.csv": "/bon-viveur/static/media/Restaurants.52f60537.csv",
+    "static/media/Restaurants.f1d4b55c.csv": "/bon-viveur/static/media/Restaurants.f1d4b55c.csv",
+    "static/media/close.3db1d2dc.png": "/bon-viveur/static/media/close.3db1d2dc.png",
     "static/media/halfstar.f2b5f456.png": "/bon-viveur/static/media/halfstar.f2b5f456.png",
     "static/media/mappin.5c365d0f.png": "/bon-viveur/static/media/mappin.5c365d0f.png",
     "static/media/phone.d3374a1e.png": "/bon-viveur/static/media/phone.d3374a1e.png",
@@ -22,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.53bc0cb1.js",
-    "static/js/2.ea4ce327.chunk.js",
-    "static/css/main.8810d451.chunk.css",
-    "static/js/main.d36a9da7.chunk.js"
+    "static/js/2.d9125489.chunk.js",
+    "static/css/main.25664f12.chunk.css",
+    "static/js/main.7829ef01.chunk.js"
   ]
 }

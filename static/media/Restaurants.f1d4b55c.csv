@@ -145,7 +145,7 @@ Five Senses,Korean,Lunch/Dinner,Koreatown,2,40.747715,-73.98605599999999
 bb.q Chicken,Korean,Quick Bites,Koreatown,1,40.7479292,-73.98677599999999
 Joe's Steam Rice Roll,Chinese,Quick Bites,Chinatown,1,40.7190077,-74.00084269999999
 Epistrophy,Italian,Drinks|Date Night,Nolita,2,40.721191,-73.995392
-Soho Park,American,Drinks|Lunch/Dinner,Soho,2,40.7236389,-73.9967611
+Soho Park,American,Drinks,Soho,2,40.7236389,-73.9967611
 Pera Soho,Mediterranean,Drinks|Lunch/Dinner,Soho,2,40.7238167,-74.0033792
 Dominique Ansel,Bakery,Desserts,Soho,2,40.7252509,-74.0028734
 La Colombe,Coffee,Cafe,Soho|Noho|Midtown|FiDi,1,40.7280812,-73.9932998
@@ -226,3 +226,9 @@ Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tri
 Poco,Spanish,Brunch|Drinks|To Share|Lunch/Dinner,East Village,2,40.7225107,-73.9829025
 La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.7438577,-73.9901636
 La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.7525176,-73.9831529
+Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.7142679,-74.0086752
+Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.7573133,-73.98740649999999
+Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.751501,-73.9777457
+Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.74225209999999,-74.0059635
+LOULOU,French,Date Night|Lunch/Dinner|Drinks,Chelsea,2,40.74262,-74.00005240000002
+Rosie's,Mexican,Lunch/Dinner|Drinks,East Village,2,40.7249241,-73.9906202
