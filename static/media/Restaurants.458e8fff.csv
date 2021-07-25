@@ -34,7 +34,7 @@ Tompkins Square Bagels,Bagels,Quick Bites,East Village,1,40.7306771,-73.9858174
 The Butcher's Daughter,American,Brunch,Nolita|Greenwich Village|Williamsburg,2,40.7207146,-73.9948374
 Joe's Pizza,Pizza,Quick Bites,South Village|East Village|Midtown,1,40.7305803,-74.00209559999999
 Egg Shop,American,Brunch,Nolita|Williamsburg,2,40.7204333,-73.9951817
-The Rice Noodle,Chinese,Lunch/Dinner,Greenwich Village,1,40.7292194,-74.001466
+The Rice Noodle,Chinese,Lunch/Dinner,South Village,1,40.7292194,-74.001466
 Jack's Wife Freda,Mediterranean,Brunch,Greenwich Village|Soho,3,40.7221234,-73.9975099
 Jacob's Pickles,American|Southern,Brunch|Lunch/Dinner,Upper West Side,2,40.786648,-73.9755259
 Mimi Cheng's Dumplings,Chinese,Quick Bites,Nolita|East Village,1,40.7307684,-73.98635569999999
@@ -101,7 +101,7 @@ Grace Street Cafe,Korean,Desserts|Cafe,Koreatown,2,40.7477172,-73.98653019999999
 Gammeeok,Korean,Lunch/Dinner,Koreatown,2,40.74771519999999,-73.9860561
 The Alley,Tea,Tea,East Village,1,40.7295935,-73.990984
 Debutea,Tea,Tea,Greenwich Village,1,40.729175,-73.99932439999999
-YiFang Fruit Tea,Tea,Tea,Chinatown,1,40.729047,-73.98809
+YiFang Fruit Tea,Tea,Tea,Chinatown|East Village|Kips Bay|Midtown,1,40.729047,-73.98809
 Refinery Rooftop,Bar,Drinks|Rooftop|Bar,Midtown,3,40.7522605,-73.985361
 Rosemary's,Italian,Lunch/Dinner|Date Night,Greenwich Village,2,40.7348368,-73.9998009
 Lola Taverna,Mediterranean,Lunch/Dinner|Date Night,South Village,2,40.7270494,-74.0031992
@@ -231,7 +231,8 @@ Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Mid
 Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.74225209999999,-74.0059635
 LOULOU,French,Date Night|Lunch/Dinner|Drinks,Chelsea,2,40.74262,-74.00005240000002
 Rosie's,Mexican,Lunch/Dinner|Drinks,East Village,2,40.7249241,-73.9906202
-Zazzy's Pizza,Pizza,Quick Bites,LES,1,40.72161759999999,-73.9886293
+Zazzy's Pizza,Pizza,Quick Bites,LES|Greenwich Village,1,40.72161759999999,-73.9886293
+Zazzy's Pizza,Pizza,Quick Bites,LES|Greenwich Village,1,40.7366623,-74.0019457
 Cecconi's,Italian,Lunch/Dinner|Date Night|Drinks,Dumbo,3,40.70359819999999,-73.9916626
 Kopitiam,Malaysian,Lunch/Dinner|Cafe|Quick Bites,LES,1,40.7137994,-73.9909127
 Kind Regards,Bar,Bar|Drinks,LES,2,40.7208262,-73.9878062
@@ -261,3 +262,27 @@ Egg Shop,American,Brunch,Nolita|Williamsburg,2,40.7188239,-73.9581152
 Boqueria,Spanish,Brunch|To Share,Soho|Midtown|Upper East Side,3,40.7554321,-73.99003139999999
 Boqueria,Spanish,Brunch|To Share,Soho|Midtown|Upper East Side,3,40.7715096,-73.956073
 Souvlaki GR,Mediterranean,Lunch/Dinner,LES|Midtown,2,40.7645929,-73.9801477
+Hole in the Wall,Australian,Brunch|Cafe,Flatiron|FiDi|Murray Hill|Williamsburg,2,40.7084008,-74.00561379999999
+Hole in the Wall,Australian,Brunch|Cafe,Flatiron|FiDi|Murray Hill|Williamsburg,2,40.744093,-73.9717762
+Hole in the Wall,Australian,Brunch|Cafe,Flatiron|FiDi|Murray Hill|Williamsburg,2,40.74328149999999,-73.99103099999999
+Hole in the Wall,Australian,Brunch|Cafe,Flatiron|FiDi|Murray Hill|Williamsburg,2,40.7143952,-73.96158319999999
+Oddfellows,Ice Cream,Desserts|Quick Bites,Williamsburg|DUMBO|Brooklyn Heights,1,40.70316220000001,-73.9923469
+Oddfellows,Ice Cream,Desserts|Quick Bites,Williamsburg|DUMBO|Brooklyn Heights,1,40.7160051,-73.9667905
+Oddfellows,Ice Cream,Desserts|Quick Bites,Williamsburg|DUMBO|Brooklyn Heights,1,40.6917295,-74.0029205
+Sundaes and Cones,Ice Cream,Desserts|Quick Bites,East Village,2,40.7309957,-73.98940619999999
+Arancini Bros,Italian,Quick Bites,LES,2,40.7182408,-73.988107
+YiFang Fruit Tea,Tea,Tea,Chinatown|East Village|Kips Bay|Midtown,1,40.7525212,-73.9854479
+YiFang Fruit Tea,Tea,Tea,Chinatown|East Village|Kips Bay|Midtown,1,40.729047,-73.98809
+YiFang Fruit Tea,Tea,Tea,Chinatown|East Village|Kips Bay|Midtown,1,40.7403307,-73.9845914
+Dorado,Mexican,Quick Bites|Lunch/Dinner,Greenwich Village,1,40.7339394,-73.9931345
+Lena,French,Cafe|Drinks|Quick Bites,Greenwich Village|LES,2,40.719126,-73.99163899999999
+Lena,French,Cafe|Drinks|Quick Bites,Greenwich Village|LES,2,40.7325078,-73.99670379999999
+Lao Ma Spicy,Chinese,Lunch/Dinner,Greenwich Village,2,40.7309128,-73.9934956
+Brooklyn Bagel & Coffee Co,Bagels,Cafe|Quick Bites,Greenwich Village|Chelsea,2,40.7310311,-73.9931617
+Brooklyn Bagel & Coffee Co,Bagels,Cafe|Quick Bites,Greenwich Village|Chelsea,2,40.7461674,-73.99764069999999
+iSouvlaki,Mediterranean,Quick Bites|Lunch/Dinner,East Village,2,40.7321753,-73.98831009999999
+Pepe Rosso To Go,Italian,Quick Bites|Lunch/Dinner,South Village,1,40.7272222,-74.00162499999999
+Junzi Kitchen,Chinese,Quick Bites,South Village|Midtown,2,40.7286951,-74.0006611
+Junzi Kitchen,Chinese,Quick Bites,South Village|Midtown,2,40.7261367,-74.00499409999999
+Pommes Frites,Belgian,Quick Bites,South Village,1,40.7301222,-74.0002813
+Tipsy Shanghai,Chinese,Lunch/Dinner,Greenwich Village,2,40.7292608,-73.9987785
