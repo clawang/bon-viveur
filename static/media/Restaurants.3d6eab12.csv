@@ -1,18 +1,18 @@
 name,cuisine,category,location,price,lat,lng
 Aunt Jake's,Italian,Lunch/Dinner|Brunch,Greenwich Village|Little Italy,2,40.7333363,-73.99849120000002
-Magnolia Bakery,Bakery,Desserts,Greenwich Village,2,40.7358805,-74.00496729999999
+Magnolia Bakery,Bakery,Desserts,Greenwich Village|Midtown|Midtown East,2,40.7358805,-74.00496729999999
 Laut,Thai|Southeast Asian,Lunch/Dinner,Chelsea,2,40.7376158,-73.9910302
 Thursday Kitchen,Korean,Drinks|Lunch/Dinner|Date Night,East Village,2,40.727566,-73.98380499999999
 Olio e Piu,Italian,Lunch/Dinner,Greenwich Village,2,40.73379449999999,-73.9997927
 uluh,Chinese,Lunch/Dinner,East Village,2,40.7293472,-73.9866141
 La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.72346,-73.9963118
 Balthazar,French,Lunch/Dinner,Soho,3,40.722668,-73.99822979999999
-Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad,2,40.724,-73.9938
+Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.724,-73.9938
 Shoo Shoo Nolita,Mediterranean,Brunch,Nolita,2,40.7200534,-73.9962769
 AweSum Dim Sum,Dim Sum|Chinese,Brunch|To Share,Gramercy,2,40.7388534,-73.9836737
 Wayla,Thai,Lunch/Dinner,LES,2,40.7182852,-73.9926038
 Somtum Der,Thai,Lunch/Dinner,East Village,2,40.7252385,-73.984342
-Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village,2,40.7223109,-73.9963226
+Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village|Kips Bay,2,40.7223109,-73.9963226
 San Marzano,Italian,Lunch/Dinner,East Village,1,40.7279967,-73.9884379
 Clinton St Baking Co.,American,Brunch,LES,2,40.721264,-73.9838497
 Bar Primi,Italian,Lunch/Dinner|Date Night,East Village,2,40.7256677,-73.9917285
@@ -31,9 +31,9 @@ Baar Baar,Indian,Lunch/Dinner,East Village,3,40.7244269,-73.9915532
 Joe's Shanghai,Chinese,Lunch/Dinner,Chinatown,1,40.7156587,-73.9966735
 Prince St. Pizza,Pizza,Quick Bites,Nolita,1,40.723084,-73.994528
 Tompkins Square Bagels,Bagels,Quick Bites,East Village,1,40.7306771,-73.9858174
-The Butcher's Daughter,American,Brunch,Nolita,2,40.7207146,-73.9948374
+The Butcher's Daughter,American,Brunch,Nolita|Greenwich Village|Williamsburg,2,40.7207146,-73.9948374
 Joe's Pizza,Pizza,Quick Bites,South Village|East Village|Midtown,1,40.7305803,-74.00209559999999
-Egg Shop,American,Brunch,Nolita,2,40.7204333,-73.9951817
+Egg Shop,American,Brunch,Nolita|Williamsburg,2,40.7204333,-73.9951817
 The Rice Noodle,Chinese,Lunch/Dinner,Greenwich Village,1,40.7292194,-74.001466
 Jack's Wife Freda,Mediterranean,Brunch,Greenwich Village|Soho,3,40.7221234,-73.9975099
 Jacob's Pickles,American|Southern,Brunch|Lunch/Dinner,Upper West Side,2,40.786648,-73.9755259
@@ -42,7 +42,7 @@ Mimi Cheng's Dumplings,Chinese,Quick Bites,Nolita|East Village,1,40.7205237,-73.
 Pinto Garden,Thai,Brunch|Lunch/Dinner|Date Night,Greenwich Village,2,40.7348667,-73.99948189999999
 Soothr,Thai,Lunch/Dinner|Drinks|Date Night,East Village,2,40.7323017,-73.9873417
 Amigo by Nai,Mexican,Lunch/Dinner,East Village,2,40.72469479999999,-73.9908769
-Dim Sum Palace,Dim Sum|Chinese,Brunch|Lunch/Dinner|To Share,East Village,2,40.7258783,-73.989884
+Dim Sum Palace,Dim Sum|Chinese,Brunch|Lunch/Dinner|To Share,East Village|Midtown|Hell's Kitchen|Koreatown,2,40.7258783,-73.989884
 Bar Verde,Mexican|Vegan,Lunch/Dinner,East Village,2,40.7260641,-73.9897793
 SESTINA,Italian|Vegan,Lunch/Dinner,East Village,2,40.7261601,-73.9897043
 Saigon Social,Vietnamese,Lunch/Dinner,LES,2,40.7214626,-73.9882485
@@ -64,7 +64,7 @@ Spicy Moon,Chinese|Vegan,Lunch/Dinner,East Village|Greenwich Village,1,40.726690
 outro,Australian,Brunch,East Village,2,40.7327739,-73.9909553
 Madam Ji,Indian,Lunch/Dinner|Brunch,Greenwich Village,2,40.7282047,-73.9995574
 Citizens Of,Australian,Brunch,Greenwich Village|Soho|Chelsea|Gramercy,2,40.7285617,-73.9997028
-Boqueria,Spanish,Brunch|To Share,Soho,3,40.7248694,-74.002175
+Boqueria,Spanish,Brunch|To Share,Soho|Midtown|Upper East Side,3,40.7248694,-74.002175
 Tortaria,Mexican,Lunch/Dinner,Greenwich Village,2,40.73387,-73.99304000000001
 Raku,Japanese,Lunch/Dinner,South Village|East Village,2,40.7265503,-73.9867249
 Rasa,Southeast Asian,Lunch/Dinner,Greenwich Village,2,40.7329711,-73.9976527
@@ -93,7 +93,7 @@ Xi'an Famous Foods,Chinese,Quick Bites,Chelsea|Chinatown|Upper East Side,1,40.71
 Harbs,Japanese,Desserts,Soho,2,40.72641309999999,-74.0000264
 Levain Bakery,Bakery,Desserts,Noho|Upper East Side,1,40.7262243,-73.9946887
 Bar Belly,Bar,Bar|Drinks,LES,2,40.7151381,-73.9916374
-Souvlaki GR,Mediterranean,Lunch/Dinner,LES,2,40.7211257,-73.98715589999999
+Souvlaki GR,Mediterranean,Lunch/Dinner,LES|Midtown,2,40.7211257,-73.98715589999999
 Wah Fung No 1 Fast Food,Chinese,Quick Bites,Chinatown,1,40.7173189,-73.9944649
 Itaewon Pocha,Korean,Bar|Drinks,Koreatown,2,40.7477111,-73.9870834
 BCD Tofu House,Korean,Lunch/Dinner,Koreatown,2,40.7475106,-73.98606269999999
@@ -171,9 +171,9 @@ Casa La Femme,Middle Eastern,Lunch/Dinner|Date Night,Greenwich Village,3,40.7341
 Supermoon Bakehouse,Bakery,Desserts|Cafe,LES,2,40.7198453,-73.9872386
 Aunt Jake's,Italian,Lunch/Dinner|Brunch,Greenwich Village|Little Italy,2,40.71865150000001,-73.9979766
 La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.7549194,-73.9682485
-Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad,2,40.7311167,-74.002714
-Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad,2,40.74295559999999,-73.9911351
-Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village,2,40.7310755,-73.9883598
+Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.7311167,-74.002714
+Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.74295559999999,-73.9911351
+Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village|Kips Bay,2,40.7310755,-73.9883598
 Joe's Pizza,Pizza,Quick Bites,South Village|East Village|Midtown,1,40.7332362,-73.9876852
 Joe's Pizza,Pizza,Quick Bites,South Village|East Village|Midtown,1,40.7546287,-73.9869994
 Jack's Wife Freda,Mediterranean,Brunch,Greenwich Village|Soho,3,40.72981679999999,-74.00351599999999
@@ -245,3 +245,19 @@ Rule of Thirds,Japanese,Lunch/Dinner,Greenpoint,2,40.7247503,-73.95503
 El Diablito Taqueria,Mexican,Quick Bites,East Village,1,40.7250658,-73.9891632
 12 Chairs,Mediterranean,Brunch|Lunch/Dinner,South Village|Williamsburg,2,40.7275314,-74.002288
 12 Chairs,Mediterranean,Brunch|Lunch/Dinner,South Village|Williamsburg,2,40.7144908,-73.96521179999999
+Kimika,Japanese|Italian,Lunch/Dinner|Drinks|Date Night,Nolita,3,40.72054989999999,-73.9951805
+Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.7046445,-74.0118676
+Magnolia Bakery,Bakery,Desserts,Greenwich Village|Midtown|Midtown East,2,40.7525713,-73.9767735
+Magnolia Bakery,Bakery,Desserts,Greenwich Village|Midtown|Midtown East,2,40.7581533,-73.9831181
+Sea Wolf,Seafood,Lunch/Dinner|Drinks,Williamsburg|Bushwick,2,40.7099023,-73.9694234
+Sea Wolf,Seafood,Lunch/Dinner|Drinks,Williamsburg|Bushwick,2,40.7066974,-73.9256219
+Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village|Kips Bay,2,40.7436223,-73.97988810000001
+The Butcher's Daughter,American,Brunch,Nolita|Greenwich Village|Williamsburg,2,40.736362,-74.00615499999999
+The Butcher's Daughter,American,Brunch,Nolita|Greenwich Village|Williamsburg,2,40.7149216,-73.9584941
+Dim Sum Palace,Dim Sum|Chinese,Brunch|Lunch/Dinner|To Share,East Village|Midtown|Hell's Kitchen|Koreatown,2,40.7485991,-73.98676139999999
+Dim Sum Palace,Dim Sum|Chinese,Brunch|Lunch/Dinner|To Share,East Village|Midtown|Hell's Kitchen|Koreatown,2,40.7601962,-73.9893445
+Dim Sum Palace,Dim Sum|Chinese,Brunch|Lunch/Dinner|To Share,East Village|Midtown|Hell's Kitchen|Koreatown,2,40.762231,-73.9769246
+Egg Shop,American,Brunch,Nolita|Williamsburg,2,40.7188239,-73.9581152
+Boqueria,Spanish,Brunch|To Share,Soho|Midtown|Upper East Side,3,40.7554321,-73.99003139999999
+Boqueria,Spanish,Brunch|To Share,Soho|Midtown|Upper East Side,3,40.7715096,-73.956073
+Souvlaki GR,Mediterranean,Lunch/Dinner,LES|Midtown,2,40.7645929,-73.9801477
