@@ -35,4 +35,18 @@ const extractProp = (prop, arr) => {
 	return temp;
 };
 
-export {parse, extractProp};
+const multiFilter = (arr, prop, filters) => {
+	arr = arr.filter(r => {
+		let bool = false;
+		filters.forEach(f => {
+			//console.log(sc);
+			if(r[prop].includes(f)) {
+				bool = true;
+			}
+		});
+		return bool;
+	});
+	return arr;
+}
+
+export {multiFilter, parse, extractProp};
