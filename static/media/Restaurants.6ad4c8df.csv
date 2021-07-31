@@ -208,7 +208,7 @@ Bluestone Lane,Australian,Cafe|Brunch,Nolita|South Village|East Village|Greenwic
 Bluestone Lane,Australian,Cafe|Brunch,Nolita|South Village|East Village|Greenwich Village|Midtown,2,40.7358132,-74.00089059999999
 Bluestone Lane,Australian,Cafe|Brunch,Nolita|South Village|East Village|Greenwich Village|Midtown,2,40.7413439,-73.9863879
 Bibble & Sip,Bakery,Desserts|Quick Bites,Hell's Kitchen|Little Italy,2,40.7179357,-73.997631
-The Little Shop,Bar,Bar|Drinks,Seaport,2,40.7083747,-74.00095519999999
+The Little Shop,Bar,Bar|Drinks|Speakeasy,Seaport,2,40.7083747,-74.00095519999999
 Eataly NYC,Italian,Lunch/Dinner,FiDi|Nomad,2,40.742045,-73.9900845
 Eataly NYC,Italian,Lunch/Dinner,FiDi|Nomad,2,40.7100647,-74.0119758
 Morgenstern's,Ice Cream,Desserts|Quick Bites,South Village|LES,1,40.727261,-73.99982399999999
@@ -294,5 +294,5 @@ Gammeeok,Korean,Lunch/Dinner,Koreatown,2,40.74771519999999,-73.9860561
 Thai Villa,Thai,Lunch/Dinner,Chelsea,2,40.73898519999999,-73.99070019999999
 The Blond,Bar,Bar|Drinks,SoHo,4,40.71921690000001,-74.0001156
 The Woo,Korean,Lunch/Dinner|Drinks,South Village,2,40.72521709999999,-74.00378280000001
-Fig. 19,Bar,Bar|Drinks,LES,2,40.7195451,-73.99366490000001
+Fig. 19,Bar,Bar|Drinks|Speakeasy,LES,2,40.7195451,-73.99366490000001
 Mister Paradise,Bar,Bar|Drinks,East Village,2,40.7267727,-73.986222
