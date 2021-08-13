@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bon-viveur/static/css/main.25664f12.chunk.css",
+    "main.css": "/bon-viveur/static/css/main.d19d33bd.chunk.css",
     "main.js": "/bon-viveur/static/js/main.ef8b4704.chunk.js",
     "main.js.map": "/bon-viveur/static/js/main.ef8b4704.chunk.js.map",
     "runtime-main.js": "/bon-viveur/static/js/runtime-main.53bc0cb1.js",
@@ -10,7 +10,7 @@
     "static/js/3.6956957b.chunk.js": "/bon-viveur/static/js/3.6956957b.chunk.js",
     "static/js/3.6956957b.chunk.js.map": "/bon-viveur/static/js/3.6956957b.chunk.js.map",
     "index.html": "/bon-viveur/index.html",
-    "static/css/main.25664f12.chunk.css.map": "/bon-viveur/static/css/main.25664f12.chunk.css.map",
+    "static/css/main.d19d33bd.chunk.css.map": "/bon-viveur/static/css/main.d19d33bd.chunk.css.map",
     "static/js/2.d9125489.chunk.js.LICENSE.txt": "/bon-viveur/static/js/2.d9125489.chunk.js.LICENSE.txt",
     "static/media/style.scss": "/bon-viveur/static/media/MaisonNeue-Book.941caedd.ttf",
     "static/media/Restaurants.cec5614a.csv": "/bon-viveur/static/media/Restaurants.cec5614a.csv",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.53bc0cb1.js",
     "static/js/2.d9125489.chunk.js",
-    "static/css/main.25664f12.chunk.css",
+    "static/css/main.d19d33bd.chunk.css",
     "static/js/main.ef8b4704.chunk.js"
   ]
 }
