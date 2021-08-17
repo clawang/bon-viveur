@@ -200,6 +200,8 @@ const nyc = {
   lng: -74.006
 };
 
+const sf = { lat: 37.783, lng: -122.421 };
+
 function MapMode(props) {
 
 	const mapRef = useRef();

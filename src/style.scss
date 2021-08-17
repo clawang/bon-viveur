@@ -199,6 +199,10 @@ select {
 		font-size: 22px;
 		margin-bottom: 0.5em;
 		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	p {

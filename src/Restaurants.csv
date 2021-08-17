@@ -22,7 +22,8 @@ Agave,Mexican,Lunch/Dinner|Date Night,Greenwich Village,2,40.7347326,-74.0023994
 Pardon My French,French,Lunch/Dinner|Date Night,East Village,3,40.7247571,-73.9811947
 Berimbau Brazilian Kitchen,South American,Lunch/Dinner|Drinks,South Village,2,40.7301198,-74.0036057
 Chama Mama,Middle Eastern,Lunch/Dinner|Brunch,Chelsea,2,40.7384413,-73.9988997
-Russ & Daughters Cafe,Bagels,Brunch|Quick Bites,LES,2,40.7196181,-73.9895779
+Russ & Daughters Cafe,Bagels|Jewish,Brunch,LES,2,40.7196181,-73.9895779
+Russ & Daughters,Bagels|Jewish,Quick Bites,LES,2,40.7225076,-73.9889424
 19 Cleveland,Mediterranean,Brunch,Nolita,2,40.7215964,-73.9970748
 Banter,Australian,Brunch,South Village,2,40.7279278,-74.0009847
 The Wild Son,American,Brunch|Drinks,East Village,2,40.7274064,-73.98514229999999
@@ -154,7 +155,7 @@ Noree Thai Bazaar,Thai,Lunch/Dinner,LES,2,40.718034,-73.9927672
 Piacere,Italian,Lunch/Dinner,Little Italy,2,40.719703,-73.9951354
 Asuka Sushi,Japanese,Lunch/Dinner,Chelsea,2,40.7453424,-73.9990165
 The Mercer Kitchen,American,Brunch|Lunch/Dinner|Drinks,Soho,3,40.7248421,-73.99864939999999
-Fish Cheeks,Thai,Lunch/Dinner,Noho,2,40.72570899999999,-73.992682
+Fish Cheeks,Thai|Seafood,Lunch/Dinner,Noho,2,40.72570899999999,-73.992682
 Taiyaki,Japanese,Desserts,Chinatown,1,40.7179112,-73.99886529999999
 Spaghetti Incident,Italian,Lunch/Dinner,LES,2,40.722402,-73.9899587
 Sonnyboy,Australian,Brunch|Lunch/Dinner,LES,2,40.7205154,-73.9901841
@@ -208,7 +209,7 @@ Bluestone Lane,Australian,Cafe|Brunch,Nolita|South Village|East Village|Greenwic
 Bluestone Lane,Australian,Cafe|Brunch,Nolita|South Village|East Village|Greenwich Village|Midtown,2,40.7358132,-74.00089059999999
 Bluestone Lane,Australian,Cafe|Brunch,Nolita|South Village|East Village|Greenwich Village|Midtown,2,40.7413439,-73.9863879
 Bibble & Sip,Bakery,Desserts|Quick Bites,Hell's Kitchen|Little Italy,2,40.7179357,-73.997631
-The Little Shop,Bar,Bar|Drinks,Seaport,2,40.7083747,-74.00095519999999
+The Little Shop,Bar,Bar|Drinks|Speakeasy,Seaport,2,40.7083747,-74.00095519999999
 Eataly NYC,Italian,Lunch/Dinner,FiDi|Nomad,2,40.742045,-73.9900845
 Eataly NYC,Italian,Lunch/Dinner,FiDi|Nomad,2,40.7100647,-74.0119758
 Morgenstern's,Ice Cream,Desserts|Quick Bites,South Village|LES,1,40.727261,-73.99982399999999
@@ -287,7 +288,24 @@ Junzi Kitchen,Chinese,Quick Bites,South Village|Midtown,2,40.7261367,-74.0049940
 Pommes Frites,Belgian,Quick Bites,South Village,1,40.7301222,-74.0002813
 Tipsy Shanghai,Chinese,Lunch/Dinner,Greenwich Village,2,40.7292608,-73.9987785
 Cafe Leon Dore,Coffee,Cafe,Nolita,2,40.7221964,-73.9960802
-Misirizzi,Italian,Lunch/Dinner|Date Night,NoHo,2,40.72720109999999,-73.9922849
+Misirizzi,Italian,Lunch/Dinner|Date Night,Noho,2,40.72720109999999,-73.9922849
 Fried Dumpling,Chinese,Quick Bites,Chinatown,1,40.7145546,-73.9992711
 Hoy Wong,Chinese,Quick Bites,Chinatown,1,40.7165931,-73.9980315
 Gammeeok,Korean,Lunch/Dinner,Koreatown,2,40.74771519999999,-73.9860561
+Thai Villa,Thai,Lunch/Dinner,Chelsea,2,40.73898519999999,-73.99070019999999
+The Blond,Bar,Bar|Drinks,Soho,4,40.71921690000001,-74.0001156
+The Woo,Korean,Lunch/Dinner|Drinks,South Village,2,40.72521709999999,-74.00378280000001
+Fig. 19,Bar,Bar|Drinks|Speakeasy,LES,2,40.7195451,-73.99366490000001
+Mister Paradise,Bar,Bar|Drinks,East Village,2,40.7267727,-73.986222
+American Whiskey,American,Lunch/Dinner|Brunch|Drinks|Bar,Tribeca,2,40.7189236,-74.0068996
+Katz's Delicatessen,Jewish,Lunch/Dinner|Quick Bites,LES,2,40.722233,-73.98742899999999
+Dim Sum Chelsea,Chinese|Dim Sum,Lunch/Dinner|Brunch,Chelsea,2,40.7446121,-73.99862900000001
+Felix Roasting Co.,Coffee,Cafe,Soho,2,40.7243894,-73.9996615
+Astor Plate,American,Cafe|Quick Bites,Noho,1,40.7294833,-73.9911523
+GITANO,Mexican,Lunch/Dinner|Drinks|Bar|Date Night,South Village,3,40.7228793,-74.005826
+Blue Stripes Cacao,Coffee|Bakery,Desserts|Quick Bites|Cafe,Greenwich Village,2,40.7346342,-73.992897
+230 Fifth Rooftop,Bar,Bar|Drinks|Rooftop,Nomad,2,40.74400199999999,-73.9880767
+Rubirosa,Italian,Lunch/Dinner,Nolita,2,40.7227471,-73.9962025
+Gelso and Grand,Italian,Lunch/Dinner,Little Italy,2,40.7195839,-73.99734029999999
+The Roof at PUBLIC,Bar,Bar|Drinks|Rooftop,LES,3,40.7228758,-73.9918508
+MONO+MONO,Korean,Lunch/Dinner|Drinks|Date Night,East Village,2,40.7254016,-73.9881049
