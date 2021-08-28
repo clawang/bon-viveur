@@ -114,7 +114,7 @@ Klong,Thai,Lunch/Dinner|Drinks,East Village,2,40.7295828,-73.9891322
 Xe May Sandwich Shop,Vietnamese,Quick Bites,East Village,1,40.7272078,-73.9849232
 Veselka,Eastern European,Lunch/Dinner|Brunch,East Village,2,40.7290155,-73.9871139
 Mr. Purple,Bar,Drinks|Rooftop|Bar,LES,3,40.721741,-73.988103
-The Top of the Standard,Bar,Drinks|Rooftop|Bar,Chelsea,4,40.740875,-74.00814439999999
+Le Bain,Bar,Drinks|Rooftop|Bar,Chelsea,4,40.740875,-74.00814439999999
 Laduree,French,Desserts|Brunch,Soho|Upper East Side,3,40.7242961,-74.0024518
 KENKA,Japanese,Lunch/Dinner,East Village,1,40.7291388,-73.9884654
 The Granddaddy,Coffee,Cafe,LES,1,40.7177667,-73.9920389
@@ -122,7 +122,7 @@ Milk & Cream Cereal Bar,Ice Cream,Desserts,Little Italy,1,40.7195711,-73.9964744
 Keki Modern Cakes,Japanese|Bakery,Desserts,Chinatown|Koreatown,1,40.7468552,-73.9849861
 Sweet Moment,Korean,Desserts,Little Italy,2,40.71763,-73.997147
 Clay Pot,Chinese,Lunch/Dinner,Greenwich Village,1,40.727915,-73.98665799999999
-Simo Pizza,Pizza,Quick Bites,Chelsea,1,40.7392955,-74.0087429
+Simo Pizza,Pizza,Quick Bites,Meatpacking District,1,40.7392955,-74.0087429
 Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Gramercy,3,40.733047,-74.0028772
 Little Cupcake Bakeshop,Bakery,Desserts,Nolita,1,40.72289910000001,-73.994847
 Spot Dessert Bar,Asian,Desserts,East Village,2,40.7293975,-73.988927
@@ -316,3 +316,13 @@ Raclette,French,Lunch/Dinner,East Village,2,40.7289261,-73.9806299
 Round K by Sol,Coffee,Brunch|Cafe,Chinatown,2,40.7150818,-73.9931521
 Remi Flower & Coffee,Coffee,Cafe|Quick Bites,Murray Hill|Midtown East,2,40.7535755,-73.9702924
 Remi Flower & Coffee,Coffee,Cafe|Quick Bites,Murray Hill|Midtown East,2,40.7508628,-73.9732778
+Butler,American|Coffee,Brunch|Cafe|Desserts,DUMBO|Williamsburg|Soho,2,40.7035615,-73.9925098
+Butler,American|Coffee,Brunch|Cafe|Desserts,DUMBO|Williamsburg|Soho,2,40.711249,-73.9661513
+Butler,American|Coffee,Brunch|Cafe|Desserts,DUMBO|Williamsburg|Soho,2,40.720785,-73.9992466
+Butler,American|Coffee,Brunch|Cafe|Desserts,DUMBO|Williamsburg|Soho,2,40.7199467,-73.9612837
+Mokyo,Korean,Lunch/Dinner,East Village,3,40.7271382,-73.9839549
+% ARABICA,Coffee,Cafe,DUMBO,2,40.7024312,-73.9941401
+Kobrick Coffee Co.,Coffee,Cafe|Drinks,Meatpacking District,2,40.7403278,-74.00558889999999
+Cutlets Sandwich Co.,American,Quick Bites,Midtown|Williamsburg,2,40.7222385,-73.9579522
+Cutlets Sandwich Co.,American,Quick Bites,Midtown|Williamsburg,2,40.752121,-73.9929004
+Catch NYC,Seafood|Bar,Bar|Rooftop|Lunch/Dinner|Drinks,Meatpacking District,3,40.7402172,-74.0062995
