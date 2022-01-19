@@ -9,7 +9,8 @@ La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.72346
 Balthazar,French,Lunch/Dinner,Soho,3,40.722668,-73.99822979999999
 Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.724,-73.9938
 Shoo Shoo Nolita,Mediterranean,Brunch,Nolita,2,40.7200534,-73.9962769
-AweSum Dim Sum,Dim Sum|Chinese,Brunch|To Share,Gramercy,2,40.7388534,-73.9836737
+AweSum Dim Sum,Dim Sum|Chinese,Brunch|To Share,Gramercy|Midtown,2,40.7388534,-73.9836737
+AweSum Dim Sum,Dim Sum|Chinese,Brunch|To Share,Gramercy|Midtown,2,40.7551117,-73.9911301
 Wayla,Thai,Lunch/Dinner,LES,2,40.7182852,-73.9926038
 Somtum Der,Thai,Lunch/Dinner,East Village,2,40.7252385,-73.984342
 Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village|Kips Bay,2,40.7223109,-73.9963226
@@ -114,7 +115,7 @@ Klong,Thai,Lunch/Dinner|Drinks,East Village,2,40.7295828,-73.9891322
 Xe May Sandwich Shop,Vietnamese,Quick Bites,East Village,1,40.7272078,-73.9849232
 Veselka,Eastern European,Lunch/Dinner|Brunch,East Village,2,40.7290155,-73.9871139
 Mr. Purple,Bar,Drinks|Rooftop|Bar,LES,3,40.721741,-73.988103
-Le Bain,Bar,Drinks|Rooftop|Bar,Chelsea,4,40.740875,-74.00814439999999
+Le Bain,Bar,Drinks|Rooftop|Bar,Meatpacking District,4,40.740875,-74.00814439999999
 Laduree,French,Desserts|Brunch,Soho|Upper East Side,3,40.7242961,-74.0024518
 KENKA,Japanese,Lunch/Dinner,East Village,1,40.7291388,-73.9884654
 The Granddaddy,Coffee,Cafe,LES,1,40.7177667,-73.9920389
@@ -326,3 +327,10 @@ Kobrick Coffee Co.,Coffee,Cafe|Drinks,Meatpacking District,2,40.7403278,-74.0055
 Cutlets Sandwich Co.,American,Quick Bites,Midtown|Williamsburg,2,40.7222385,-73.9579522
 Cutlets Sandwich Co.,American,Quick Bites,Midtown|Williamsburg,2,40.752121,-73.9929004
 Catch NYC,Seafood|Bar,Bar|Rooftop|Lunch/Dinner|Drinks,Meatpacking District,3,40.7402172,-74.0062995
+Veranda,American,Lunch/Dinner|Date Night|Drinks,South Village,3,40.7228013,-74.00482699999999
+Forsythia,Italian,Lunch/Dinner|Date Night|Drinks,LES,2,40.7225352,-73.99249189999999
+Very Fresh Noodles,Chinese,Quick Bites|Lunch/Dinner,Chelsea,2,40.7420723,-74.00564539999999
+Somewhere Nowhere,Bar,Bar|Drinks|Rooftop,Nomad,3,40.7443203,-73.9926957
+Ralph's Coffee,Coffee,Cafe,Chelsea|Midtown|Upper East Side,2,40.77165859999999,-73.9657658
+Ralph's Coffee,Coffee,Cafe,Chelsea|Midtown|Upper East Side,2,40.7401079,-73.9908573
+Ralph's Coffee,Coffee,Cafe,Chelsea|Midtown|Upper East Side,2,40.7589962,-73.9772973
