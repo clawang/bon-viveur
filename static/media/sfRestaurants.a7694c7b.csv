@@ -40,10 +40,9 @@ Ritual Coffee Roasters,Coffee,Cafe,Hayes Valley|Haight-Ashbury|Mission,2,37.7705
 Chez Maman,French,Lunch/Dinner|Date Night,Potrero Hill|Hayes Valley,2,37.7624483,-122.3967107
 Chez Maman,French,Lunch/Dinner|Date Night,Potrero Hill|Hayes Valley,2,37.7770405,-122.4231768
 Nojo Ramen Tavern,Japanese,Lunch/Dinner|Drinks,Hayes Valley,2,37.7767268,-122.4214764
-Pagan Idol,Bar,Bar|Drinks,FiDi,2,37.7907439,-122.4036859
+Pagan Idol,Bar,Bar|Drinks,Fidi,2,37.7907439,-122.4036859
 Udon Mugizo,Japanese,Lunch/Dinner,Japantown,2,37.7849587,-122.4321287
 Kevin's Noodle House,Vietnamese,Lunch/Dinner,Outer Sunset,1,37.7633596,-122.4777946
-Raven Bar,Bar,Drinks|Bar,Soma,2,37.7757722,-122.4088611
 Papito,Mexican,Lunch/Dinner|Drinks,Hayes Valley|Potrero Hill,2,37.7767098,-122.4234085
 Papito,Mexican,Lunch/Dinner|Drinks,Hayes Valley|Potrero Hill,2,37.7624549,-122.3971221
 Novela,Bar,Bar|Drinks,Yerba Buena,2,37.787097,-122.40136
@@ -60,8 +59,8 @@ Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.77
 Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.7948652,-122.4213815
 Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.7735205,-122.3916911
 Akira,Japanese,Lunch/Dinner,Lower Pacific Heights,2,37.7883278,-122.4241861
-Blackwood,American|Thai,Brunch|lunch/Dinner|Drinks,Marina,2,37.8007101,-122.4388058
-Taqueria Cancun,Mexicann,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7604861,-122.4194111
+Blackwood,American|Thai,Brunch|Lunch/Dinner|Drinks,Marina,2,37.8007101,-122.4388058
+Taqueria Cancun,Mexican,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7604861,-122.4194111
 Taqueria Cancun,Mexican,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7819686,-122.410317
 Taqueria Cancun,Mexican,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7453604,-122.4199087
 Rich Table,American,Lunch/Dinner,Hayes Valley,3,37.7748657,-122.4228497
@@ -70,3 +69,28 @@ Happy Lamb Hot Pot,Chinese,Lunch/Dinner,Lower Nob Hill,2,37.7873621,-122.4101028
 Foreign Cinema,American,Brunch|Lunch/Dinner|Date Night|Drinks,Mission,3,37.7564917,-122.4191194
 Delarosa,Italian,Lunch/Dinner,Yerba Buena|Marina,2,37.7858351,-122.404415
 Delarosa,Italian,Lunch/Dinner,Yerba Buena|Marina,2,37.8002893,-122.439106
+Stonemill Matcha,Japanese,Cafe|Brunch,Mission,2,37.7639681,-122.4216256
+Bluestone Lane,Australian,Brunch|Cafe,Fidi|Soma|Lower Nob Hill|Union Square,2,37.78781250000001,-122.4029131
+Bluestone Lane,Australian,Brunch|Cafe,Fidi|Soma|Lower Nob Hill|Union Square,2,37.7892025,-122.4098192
+Bluestone Lane,Australian,Brunch|Cafe,Fidi|Soma|Lower Nob Hill|Union Square,2,37.7910068,-122.4012623
+Bluestone Lane,Australian,Brunch|Cafe,Fidi|Soma|Lower Nob Hill|Union Square,2,37.788651,-122.4002881
+Bob's Donut and Pastry Shop,Bakery,Desserts|Quick Bites,Polk Gulch,1,37.7918769,-122.4212009
+Sweet Maple,American,Brunch,Lower Pacific Heights,2,37.78570819999999,-122.4351203
+Surisan,Korean,Brunch|Lunch/Dinner,Fisherman's Wharf,2,37.8067911,-122.417499
+The Coffee Movement,Coffee,Cafe,Chinatown,1,37.7947671,-122.4102942
+Beretta,Italian,Lunch/Dinner|Drinks,Nopa|Mission,2,37.7538556,-122.4206327
+Beretta,Italian,Lunch/Dinner|Drinks,Nopa|Mission,2,37.77574329999999,-122.4382528
+Sasa Japanese Restaurant,Japanese,Lunch/Dinner|Date Night,Japantown,3,37.7852831,-122.4293591
+Uji Time Dessert,Japanese,Desserts|Quick Bites,Japantown|Yerba Buena,1,37.7852472,-122.4291833
+Uji Time Dessert,Japanese,Desserts|Quick Bites,Japantown|Yerba Buena,1,37.784291,-122.4035472
+The Madrigal,Bar,Bar|Drinks,Civic Center,2,37.7767256,-122.4192093
+Noosh,Mediterranean,Lunch/Dinner|Brunch|Date Night|Drinks,Lower Pacific Heights,2,37.7880414,-122.4338098
+On the Bridge,Japanese,Lunch/Dinner|Drinks,Japantown,2,37.7850467,-122.4316452
+Jikasei Mensho,Japanese,Quick Bites|Lunch/Dinner,Soma,2,37.7763173,-122.4167676
+Good Mong Kok Bakery,Chinese|Dim Sum,Lunch/Dinner|Quick Bites|To Share,Chinatown,1,37.795455,-122.408356
+Dim Sum Bistro,Chinese|Dim Sum,Lunch/Dinner|Quick Bites|To Share,Chinatown,1,37.7975803,-122.4081677
+Miss Saigon,Vietnamese,Lunch/Dinner,Soma,1,37.7807802,-122.408721
+Burma Superstar,Burmese|Southeast Asian,Lunch/Dinner,Inner Richmond,2,37.78281399999999,-122.4625643
+LITTLE SWEET,Tea|Asian,Desserts|Tea|Quick Bites,Inner Richmond|Union Square|Inner Sunset,2,37.7865938,-122.4059587
+LITTLE SWEET,Tea|Asian,Desserts|Tea|Quick Bites,Inner Richmond|Union Square|Inner Sunset,2,37.7649409,-122.46666
+LITTLE SWEET,Tea|Asian,Desserts|Tea|Quick Bites,Inner Richmond|Union Square|Inner Sunset,2,37.7814126,-122.4606499
