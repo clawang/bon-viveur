@@ -4,18 +4,18 @@ farm : table,American,Brunch,Lower Nob Hill,2,37.7876956,-122.4143293
 House of Thai,Thai,Lunch/Dinner,Lower Nob Hill,2,37.78628459999999,-122.4183384
 Salt & Straw,Ice Cream,Desserts|Quick Bites,Hayes Valley|Pacific Heights,1,37.776618,-122.4260455
 Salt & Straw,Ice Cream,Desserts|Quick Bites,Hayes Valley|Pacific Heights,1,37.789978,-122.4342041
-Jane,American,Brunch|Cafe,Polk Gulch|Pacific Heights|Western Addition,2,37.7837438,-122.4342764
-Jane,American,Brunch|Cafe,Polk Gulch|Pacific Heights|Western Addition,2,37.7864605,-122.4183232
-Jane,American,Brunch|Cafe,Polk Gulch|Pacific Heights|Western Addition,2,37.7893607,-122.4341389
+Jane The Bakery,American,Bakery|Brunch|Cafe,Polk Gulch|Pacific Heights|Western Addition,2,37.7837438,-122.4342764
+Jane on Larkin,American,Brunch|Cafe,Polk Gulch|Pacific Heights|Western Addition,2,37.7864605,-122.4183232
+Jane on Fillmore,American,Brunch|Cafe,Polk Gulch|Pacific Heights|Western Addition,2,37.7893607,-122.4341389
 Tropisueno,Mexican,Lunch/Dinner|Drinks,Yerba Buena,2,37.7853583,-122.40405
 Tartine Manufactory,American,Brunch|Cafe,Mission,2,37.7618278,-122.4118972
 El Techo,Mexican,Bar|Drinks|Rooftop,Mission,2,37.756576,-122.4190831
 Doppio Zero,Italian,Lunch/Dinner,Hayes Valley,2,37.7767846,-122.4227688
 Lers Ros Thai,Thai,Lunch/Dinner,Hayes Valley,2,37.7769044,-122.4217422
-Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina|Nopa|Mission,2,37.7608327,-122.4216879
-Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina|Nopa|Mission,2,37.776525,-122.4250028
-Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina|Nopa|Mission,2,37.7745311,-122.4378602
-Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina|Nopa|Mission,2,37.8003688,-122.4408124
+Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina/Cow Hollow|Nopa|Mission,2,37.7608327,-122.4216879
+Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina/Cow Hollow|Nopa|Mission,2,37.776525,-122.4250028
+Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina/Cow Hollow|Nopa|Mission,2,37.7745311,-122.4378602
+Souvla,Mediterranean,Quick Bites|Lunch/Dinner,Hayes Valley|Marina/Cow Hollow|Nopa|Mission,2,37.8003688,-122.4408124
 DragonEats,Vietnamese,Lunch/Dinner|Quick Bites,Hayes Valley|Rincon Hill|Haight-Ashbury,1,37.7863714,-122.3953302
 DragonEats,Vietnamese,Lunch/Dinner|Quick Bites,Hayes Valley|Rincon Hill|Haight-Ashbury,1,37.7783681,-122.4231481
 DragonEats,Vietnamese,Lunch/Dinner|Quick Bites,Hayes Valley|Rincon Hill|Haight-Ashbury,1,37.769494,-122.4501104
@@ -59,7 +59,7 @@ Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.77
 Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.7948652,-122.4213815
 Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.7735205,-122.3916911
 Akira,Japanese,Lunch/Dinner,Lower Pacific Heights,2,37.7883278,-122.4241861
-Blackwood,American|Thai,Brunch|Lunch/Dinner|Drinks,Marina,2,37.8007101,-122.4388058
+Blackwood,American|Thai,Brunch|Lunch/Dinner|Drinks,Marina/Cow Hollow,2,37.8007101,-122.4388058
 Taqueria Cancun,Mexican,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7604861,-122.4194111
 Taqueria Cancun,Mexican,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7819686,-122.410317
 Taqueria Cancun,Mexican,Lunch/Dinner|Quick Bites,Mission|Soma|Bernal Heights,1,37.7453604,-122.4199087
@@ -67,8 +67,8 @@ Rich Table,American,Lunch/Dinner,Hayes Valley,3,37.7748657,-122.4228497
 The Mill,Coffee,Cafe|Brunch,Nopa,2,37.7764861,-122.4378944
 Happy Lamb Hot Pot,Chinese,Lunch/Dinner,Lower Nob Hill,2,37.7873621,-122.4101028
 Foreign Cinema,American,Brunch|Lunch/Dinner|Date Night|Drinks,Mission,3,37.7564917,-122.4191194
-Delarosa,Italian,Lunch/Dinner,Yerba Buena|Marina,2,37.7858351,-122.404415
-Delarosa,Italian,Lunch/Dinner,Yerba Buena|Marina,2,37.8002893,-122.439106
+Delarosa,Italian,Lunch/Dinner,Yerba Buena|Marina/Cow Hollow,2,37.7858351,-122.404415
+Delarosa,Italian,Lunch/Dinner,Yerba Buena|Marina/Cow Hollow,2,37.8002893,-122.439106
 Stonemill Matcha,Japanese,Cafe|Brunch,Mission,2,37.7639681,-122.4216256
 Bluestone Lane,Australian,Brunch|Cafe,Fidi|Soma|Lower Nob Hill|Union Square,2,37.78781250000001,-122.4029131
 Bluestone Lane,Australian,Brunch|Cafe,Fidi|Soma|Lower Nob Hill|Union Square,2,37.7892025,-122.4098192
@@ -94,3 +94,16 @@ Burma Superstar,Burmese|Southeast Asian,Lunch/Dinner,Inner Richmond,2,37.7828139
 LITTLE SWEET,Tea|Asian,Desserts|Tea|Quick Bites,Inner Richmond|Union Square|Inner Sunset,2,37.7865938,-122.4059587
 LITTLE SWEET,Tea|Asian,Desserts|Tea|Quick Bites,Inner Richmond|Union Square|Inner Sunset,2,37.7649409,-122.46666
 LITTLE SWEET,Tea|Asian,Desserts|Tea|Quick Bites,Inner Richmond|Union Square|Inner Sunset,2,37.7814126,-122.4606499
+Wilder,American|Bar,Bar|Brunch|Drinks|Lunch/Dinner,Marina/Cow Hollow,2,37.79881650000001,-122.4357307
+BAIA,Italian|Vegan,Date Night,Hayes Valley,2,37.7781634,-122.4217955
+State Bird Provisions,American,To Share|Lunch/Dinner,Western Addition,3,37.7836806,-122.4330028
+Kahnfections,Bakery,Brunch|Quick Bites|Cafe,Mission,1,37.7587553,-122.4152538
+Wooden Spoon,American,Brunch,Duboce Triangle,2,37.7666797,-122.4305067
+Alnico,Asian|American,Brunch|Drinks,Mission,2,37.755944,-122.421318
+um.ma,Korean,Lunch/Dinner|Drinks|To Share,Inner Sunset,2,37.7655061,-122.466241
+Lao Table,Southeast Asian|Laotian,Lunch/Dinner|Drinks,Fidi,2,37.7874903,-122.3987098
+Che Fico,Italian,Date Night|Drinks|Lunch/Dinner,Nopa,3,37.7774971,-122.4380182
+Korner Store,Korean|Bar,Bar|Quick Bites|To Share,Mission,1,37.7610855,-122.4217328
+Blondie's Bar,Bar,Bar|Drinks,Mission,2,37.764216,-122.4221214
+Cafe Hana,Tea|Coffee|Japanese,Tea|Quick Bites,Japantown,1,37.7851991,-122.4303062
+Craftsman and Wolves,Bakery,Bakery|Quick Bites|Cafe|Brunch,Mission,2,37.7609056,-122.4216833

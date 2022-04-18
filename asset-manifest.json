@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bon-viveur/static/css/main.5648eeb8.chunk.css",
-    "main.js": "/bon-viveur/static/js/main.8b3b9cc7.chunk.js",
-    "main.js.map": "/bon-viveur/static/js/main.8b3b9cc7.chunk.js.map",
+    "main.js": "/bon-viveur/static/js/main.46373d39.chunk.js",
+    "main.js.map": "/bon-viveur/static/js/main.46373d39.chunk.js.map",
     "runtime-main.js": "/bon-viveur/static/js/runtime-main.3fa6cd0e.js",
     "runtime-main.js.map": "/bon-viveur/static/js/runtime-main.3fa6cd0e.js.map",
     "static/js/2.6befadb8.chunk.js": "/bon-viveur/static/js/2.6befadb8.chunk.js",
@@ -18,7 +18,7 @@
     "static/media/halfstar.f2b5f456.png": "/bon-viveur/static/media/halfstar.f2b5f456.png",
     "static/media/mappin.5c365d0f.png": "/bon-viveur/static/media/mappin.5c365d0f.png",
     "static/media/phone.d3374a1e.png": "/bon-viveur/static/media/phone.d3374a1e.png",
-    "static/media/sfRestaurants.a7694c7b.csv": "/bon-viveur/static/media/sfRestaurants.a7694c7b.csv",
+    "static/media/sfRestaurants.145c12e7.csv": "/bon-viveur/static/media/sfRestaurants.145c12e7.csv",
     "static/media/unfilled.35da6e04.png": "/bon-viveur/static/media/unfilled.35da6e04.png",
     "static/media/yelp.dd33b665.png": "/bon-viveur/static/media/yelp.dd33b665.png"
   },
@@ -26,6 +26,6 @@
     "static/js/runtime-main.3fa6cd0e.js",
     "static/js/2.6befadb8.chunk.js",
     "static/css/main.5648eeb8.chunk.css",
-    "static/js/main.8b3b9cc7.chunk.js"
+    "static/js/main.46373d39.chunk.js"
   ]
 }
