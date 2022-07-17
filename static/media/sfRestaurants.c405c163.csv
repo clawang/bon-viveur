@@ -39,10 +39,10 @@ Ritual Coffee Roasters,Coffee,Cafe,Hayes Valley|Haight-Ashbury|Mission,2,37.7763
 Ritual Coffee Roasters,Coffee,Cafe,Hayes Valley|Haight-Ashbury|Mission,2,37.7705531,-122.4438393
 Chez Maman,French,Lunch/Dinner|Date Night,Potrero Hill|Hayes Valley,2,37.7624483,-122.3967107
 Chez Maman,French,Lunch/Dinner|Date Night,Potrero Hill|Hayes Valley,2,37.7770405,-122.4231768
-Nojo Ramen Tavern,Japanese,Lunch/Dinner|Drinks,Hayes Valley,2,37.7767268,-122.4214764
+Nojo Ramen Tavern,Japanese|Ramen,Lunch/Dinner|Drinks,Hayes Valley,2,37.7767268,-122.4214764
 Pagan Idol,Bar,Bar|Drinks,Fidi,2,37.7907439,-122.4036859
-Udon Mugizo,Japanese,Lunch/Dinner,Japantown,2,37.7849587,-122.4321287
-Kevin's Noodle House,Vietnamese,Lunch/Dinner,Outer Sunset,1,37.7633596,-122.4777946
+Udon Mugizo,Japanese|Udon,Lunch/Dinner,Japantown,2,37.7849587,-122.4321287
+Kevin's Noodle House,Vietnamese,Lunch/Dinner|Noodles,Outer Sunset,1,37.7633596,-122.4777946
 Papito,Mexican,Lunch/Dinner|Drinks,Hayes Valley|Potrero Hill,2,37.7767098,-122.4234085
 Papito,Mexican,Lunch/Dinner|Drinks,Hayes Valley|Potrero Hill,2,37.7624549,-122.3971221
 Novela,Bar,Bar|Drinks,Yerba Buena,2,37.787097,-122.40136
@@ -53,7 +53,7 @@ Urban Ritual Cafe,Tea,Tea,Hayes Valley,2,37.7757014,-122.4258572
 Dumpling Time,Chinese|Dim Sum,Lunch/Dinner|To Share,Design District,2,37.7696917,-122.4023889
 Farmhouse Kitchen Thai Cuisine,Thai,Lunch/Dinner,Mission,2,37.7601894,-122.4114198
 Ozumo,Japanese,Lunch/Dinner|Drinks,Embarcadero,3,37.7926439,-122.3922179
-Marafuku Ramen,Japanese,Lunch/Dinner,Japantown,2,37.7851757,-122.4320003
+Marafuku Ramen,Japanese|Ramen,Lunch/Dinner,Japantown,2,37.7851757,-122.4320003
 Daeho,Korean,Lunch/Dinner|Drinks,Japantown,2,37.78588269999999,-122.4285535
 Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.7710697,-122.4320952
 Cafe Reveille,American,Cafe|Brunch,Lower Haight|Mission Bay|Russian Hill,2,37.7948652,-122.4213815
@@ -79,13 +79,13 @@ Surisan,Korean,Brunch|Lunch/Dinner,Fisherman's Wharf,2,37.8067911,-122.417499
 The Coffee Movement,Coffee,Cafe,Chinatown,1,37.7947671,-122.4102942
 Beretta,Italian,Lunch/Dinner|Drinks,Nopa|Mission,2,37.7538556,-122.4206327
 Beretta,Italian,Lunch/Dinner|Drinks,Nopa|Mission,2,37.77574329999999,-122.4382528
-Sasa Japanese Restaurant,Japanese,Lunch/Dinner|Date Night,Japantown,3,37.7852831,-122.4293591
+Sasa Japanese Restaurant,Japanese|Sushi,Lunch/Dinner|Date Night,Japantown,3,37.7852831,-122.4293591
 Uji Time Dessert,Japanese,Desserts|Quick Bites,Japantown|Yerba Buena,1,37.7852472,-122.4291833
 Uji Time Dessert,Japanese,Desserts|Quick Bites,Japantown|Yerba Buena,1,37.784291,-122.4035472
 The Madrigal,Bar,Bar|Drinks,Civic Center,2,37.7767256,-122.4192093
 Noosh,Mediterranean,Lunch/Dinner|Brunch|Date Night|Drinks,Lower Pacific Heights,2,37.7880414,-122.4338098
 On the Bridge,Japanese,Lunch/Dinner|Drinks,Japantown,2,37.7850467,-122.4316452
-Jikasei Mensho,Japanese,Quick Bites|Lunch/Dinner,Soma,2,37.7763173,-122.4167676
+Jikasei Mensho,Japanese|Ramen,Quick Bites|Lunch/Dinner,Soma,2,37.7763173,-122.4167676
 Good Mong Kok Bakery,Chinese|Dim Sum,Lunch/Dinner|Quick Bites|To Share,Chinatown,1,37.795455,-122.408356
 Dim Sum Bistro,Chinese|Dim Sum,Lunch/Dinner|Quick Bites|To Share,Chinatown,1,37.7975803,-122.4081677
 Miss Saigon,Vietnamese,Lunch/Dinner,Soma,1,37.7807802,-122.408721
@@ -107,7 +107,7 @@ Blondie's Bar,Bar,Bar|Drinks,Mission,2,37.764216,-122.4221214
 Cafe Hana,Tea|Coffee|Japanese,Tea|Quick Bites,Japantown,1,37.7851991,-122.4303062
 Craftsman and Wolves,Bakery,Bakery|Quick Bites|Cafe|Brunch,Mission,2,37.7609056,-122.4216833
 Dancing Yak,Nepalese,Lunch/Dinner|Date Night|Drinks|To Share,Mission,2,37.7685299,-122.4225396
-Arcana,Bar,Bar|Drinks|Date Night,Mission,2,37.7567338,-122.4192231
+Arcana,Bar|Wine,Bar|Drinks|Date Night,Mission,2,37.7567338,-122.4192231
 Propagation,Bar,Bar|Drinks,Lower Nob Hill,2,37.7871798,-122.4164241
 Shuggie's,American|Pizza,Lunch/Dinner|Drinks,Mission,3,37.7536884,-122.4195459
 Happy Shabu Shabu,Japanese,To Share,Western Addition,2,37.7824491,-122.4326914
@@ -118,3 +118,14 @@ Pizzeria Delfina,Pizza|Italian,Lunch/Dinner|Drinks,Pacific Heights|Mission,2,37.
 Ocean Beach Cafe,Cafe,Cafe|Brunch|Quick Bites,Outer Sunset,2,37.7745996,-122.5106059
 Moongate Lounge,Bar|Chinese,Bar|Drinks|Date Night,Chinatown,2,37.7937209,-122.4066555
 Bottle Club Pub,Bar,Bar|Drinks,Tenderloin,2,37.7866605,-122.4124094
+Na Ya Dessert Cafe,Asian|Cafe,Desserts|Cafe,Hayes Valley|Inner Richmond,2,37.7806373,-122.4768617
+Na Ya Dessert Cafe,Asian|Cafe,Desserts|Cafe,Hayes Valley|Inner Richmond,2,37.7772306,-122.4248817
+jina bakes,Bakery|Cafe,Bakery|Cafe|Quick Bites,Japantown,2,37.7849195,-122.4318719
+Ragazza,Italian,Lunch/Dinner,Lower Haight,2,37.7724494,-122.4374639
+La Taqueria,Mexican,Lunch/Dinner|Quick Bites,Mission,1,37.75087860000001,-122.4181833
+The Bird,American|Chicken,Lunch/Dinner|Quick Bites,Hayes Valley|Yerba Buena,1,37.7872367,-122.4000993
+The Bird,American|Chicken,Lunch/Dinner|Quick Bites,Hayes Valley|Yerba Buena,1,37.7769577,-122.4232471
+Rise & Grind Coffee,Cafe|Coffee,Cafe,Inner Richmond|Mission,1,37.7737174,-122.4661482
+Rise & Grind Coffee,Cafe|Coffee,Cafe,Inner Richmond|Mission,1,37.7558053,-122.4145989
+LUNA Kitchen,Bar|American,Bar|Brunch|Lunch/Dinner|Drinks,Mission,2,37.7618861,-122.4219171
+Fig & Thistle,Bar|Wine,Bar|Drinks,Hayes Valley,2,37.7772496,-122.4232435
