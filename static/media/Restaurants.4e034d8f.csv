@@ -1,11 +1,10 @@
 name,cuisine,category,location,price,lat,lng
-Aunt Jake's,Italian,Lunch/Dinner|Brunch,Greenwich Village|Little Italy,2,40.7333363,-73.9984912
+Aunt Jake's,Italian,Lunch/Dinner|Brunch,Upper East Side,2,40.7745912,-73.9553677
 Magnolia Bakery,Bakery,Desserts,Greenwich Village|Midtown|Midtown East,2,40.7358805,-74.0049673
 Laut,Thai|Southeast Asian,Lunch/Dinner,Chelsea,2,40.7376158,-73.9910302
 Thursday Kitchen,Korean,Drinks|Lunch/Dinner|Date Night,East Village,2,40.727566,-73.983805
 Olio e Piu,Italian,Lunch/Dinner,Greenwich Village,2,40.7337945,-73.9997927
 uluh,Chinese,Lunch/Dinner,East Village,2,40.7293472,-73.9866141
-La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.72346,-73.9963118
 Balthazar,French,Lunch/Dinner,Soho,3,40.722668,-73.9982298
 Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.724,-73.9938
 Shoo Shoo Nolita,Mediterranean,Brunch,Nolita,2,40.7200534,-73.9962769
@@ -90,7 +89,6 @@ Kona Coffee Co,Coffee,Cafe,East Village,1,40.7258692,-73.9898686
 MUD,Coffee,Cafe,East Village,1,40.7291106,-73.9866336
 Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7202877,-73.9983933
 Urban Backyard,Coffee,Cafe,Nolita,1,40.7208064,-73.9966015
-Oh K-Dog,Korean,Quick Bites,LES,1,40.721048,-73.9880419
 Xi'an Famous Foods,Chinese,Quick Bites,Chelsea|Chinatown|Upper East Side,1,40.7150822,-73.997342
 Harbs,Japanese,Desserts,Soho,2,40.7264131,-74.0000264
 Levain Bakery,Bakery,Desserts,Noho|Upper East Side,1,40.7262243,-73.9946887
@@ -136,7 +134,6 @@ JOJU,Vietnamese,Quick Bites,Midtown,2,40.7556883,-73.9788274
 The Spaniard,Bar|American,Drinks|Lunch/Dinner,South Village,2,40.7327497,-74.0021829
 Top Thai,Thai,Lunch/Dinner,Greenwich Village,2,40.7297845,-73.9994477
 Murray's Mac and Cheese,American,Quick Bites,South Village,1,40.730947,-74.0030587
-Elsie Rooftop,Bar,Drinks|Rooftop|Bar,Midtown,3,40.7537642,-73.986739
 CHILI 美麗,Chinese,Drinks|Lunch/Dinner,Midtown,2,40.7500607,-73.9821266
 Sunday to Sunday,American,Brunch|Cafe,LES,2,40.7180459,-73.9901863
 The Maze,Korean,Bar|Drinks,Koreatown,2,40.747606,-73.987256
@@ -165,13 +162,10 @@ Macchina,Italian,Lunch/Dinner,Kips Bay,2,40.7409157,-73.9814139
 Bao Bao Cafe,Asian,Lunch/Dinner,Kips Bay,1,40.7408627,-73.9835112
 Caffe Buon Gusto,Italian,Lunch/Dinner,Upper East Side,2,40.7723218,-73.9573756
 Mamasita Bar & Grill,Mexican,Lunch/Dinner,Hell's Kitchen,2,40.7673678,-73.9895115
-Cantina Rooftop,Mexican,Rooftop|Drinks|Lunch/Dinner,Hell's Kitchen,2,40.7650689,-73.9960138
 Bibble & Sip,Bakery,Desserts|Quick Bites,Hell's Kitchen|Little Italy,2,40.7628415,-73.9851781
 Lafayette Grand Cafe,Bakery|French,Lunch/Dinner|Desserts|Cafe|Brunch,Noho,3,40.7275934,-73.9937017
 Casa La Femme,Middle Eastern,Lunch/Dinner|Date Night,Greenwich Village,3,40.734147,-74.0080251
 Supermoon Bakehouse,Bakery,Desserts|Cafe,LES,2,40.7198453,-73.9872386
-Aunt Jake's,Italian,Lunch/Dinner|Brunch,Greenwich Village|Little Italy,2,40.7186515,-73.9979766
-La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.7549194,-73.9682485
 Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.7311167,-74.002714
 Tacombi,Mexican,Lunch/Dinner|Drinks|Date Night,Nolita|Greenwich Village|Nomad|FiDi,2,40.7429556,-73.9911351
 Ruby's Cafe,Australian,Lunch/Dinner|Brunch,Nolita|East Village|Kips Bay,2,40.7310755,-73.9883598
@@ -224,8 +218,6 @@ Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tri
 Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7182525,-74.0082434
 Maman,Coffee|French,Cafe|Brunch,Greenwich Village|Soho|Upper East Side|Nomad|Tribeca|Hudson Square,2,40.7321442,-73.9958345
 Poco,Spanish,Brunch|Drinks|To Share|Lunch/Dinner,East Village,2,40.7225107,-73.9829025
-La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.7438577,-73.9901636
-La Pecora Bianca,Italian,Lunch/Dinner,Nomad|Soho|Midtown|Midtown East,2,40.7525176,-73.9831529
 Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.7142679,-74.0086752
 Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.7573133,-73.9874065
 Los Tacos No. 1,Mexican,Quick Bites|Lunch/Dinner,Chelsea|Tribeca|Murray Hill|Midtown,1,40.751501,-73.9777457
@@ -297,7 +289,6 @@ The Blond,Bar,Bar|Drinks,Soho,4,40.7192169,-74.0001156
 The Woo,Korean,Lunch/Dinner|Drinks,South Village,2,40.7252171,-74.0037828
 Fig. 19,Bar,Bar|Drinks|Speakeasy,LES,2,40.7195451,-73.9936649
 Mister Paradise,Bar,Bar|Drinks,East Village,2,40.7267727,-73.986222
-American Whiskey,American,Lunch/Dinner|Brunch|Drinks|Bar,Tribeca,2,40.7189236,-74.0068996
 Katz's Delicatessen,Jewish,Lunch/Dinner|Quick Bites,LES,2,40.722233,-73.987429
 Dim Sum Chelsea,Chinese|Dim Sum,Lunch/Dinner|Brunch,Chelsea,2,40.7446121,-73.998629
 Felix Roasting Co.,Coffee,Cafe,Soho,2,40.7243894,-73.9996615
@@ -377,3 +368,7 @@ FERNS,American,Brunch|Drinks|Lunch/Dinner,East Village,2,40.728828,-73.984082
 YUBU,Korean,Quick Bites,East Village|South Village,1,40.72703569999999,-73.986148
 YUBU,Korean,Quick Bites,East Village|South Village,1,40.7226579,-74.0051181
 KYU NYC,Asian,Lunch/Dinner|Drinks|To Share,Noho,3,40.7256063,-73.99526139999999
+Oh K-Dog,Korean,Quick Bites,East Village|LES|Greenwich Village|Hell's Kitchen,1,40.72103329999999,-73.98799199999999
+Oh K-Dog,Korean,Quick Bites,East Village|LES|Greenwich Village|Hell's Kitchen,1,40.7682479,-73.985727
+Oh K-Dog,Korean,Quick Bites,East Village|LES|Greenwich Village|Hell's Kitchen,1,40.73198989999999,-74.0039956
+Oh K-Dog,Korean,Quick Bites,East Village|LES|Greenwich Village|Hell's Kitchen,1,40.7285063,-73.9880763
