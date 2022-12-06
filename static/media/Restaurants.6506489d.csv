@@ -77,7 +77,7 @@ Golden Unicorn,Dim Sum|Chinese,Brunch|To Share,Chinatown,2,40.7136857,-73.997186
 Nom Wah Tea Parlor,Dim Sum|Chinese,Brunch|To Share,Chinatown,2,40.7144447,-73.998254
 Saigon Shack,Vietnamese,Lunch/Dinner,South Village,1,40.7296889,-74.000625
 Huertas,Spanish,Lunch/Dinner,East Village,3,40.7268446,-73.9862162
-Suki,Japanese,Lunch/Dinner,East Village,2,40.7269762,-73.9861452
+Suki,Japanese,Lunch/Dinner,East Village,2,40.7288216,-73.9889971
 Sabai,Thai,Lunch/Dinner|Date Night,Nomad,2,40.744299,-73.983664
 Blank Slate Coffee,Coffee,Cafe|Brunch,Nomad,2,40.7453125,-73.9846013
 Two Hands,Australian,Brunch,Noho|Tribeca|Nolita,2,40.7196965,-73.9960246
@@ -122,7 +122,6 @@ The Granddaddy,Coffee,Cafe,LES,1,40.7177667,-73.9920389
 Milk & Cream Cereal Bar,Ice Cream,Desserts,Little Italy,1,40.7195711,-73.9964745
 Keki Modern Cakes,Japanese|Bakery,Desserts,Chinatown|Koreatown,1,40.7468552,-73.9849861
 Sweet Moment,Korean,Desserts,Little Italy,2,40.71763,-73.997147
-Clay Pot,Chinese,Lunch/Dinner,Greenwich Village,1,40.727915,-73.986658
 Simo Pizza,Pizza,Quick Bites,Meatpacking District,1,40.7392955,-74.0087429
 Boucherie,French,Lunch/Dinner|Desserts|Date Night,Greenwich Village|Gramercy,3,40.733047,-74.0028772
 Little Cupcake Bakeshop,Bakery,Desserts,Nolita,1,40.7228991,-73.994847
@@ -370,3 +369,11 @@ Ole & Steen,Bakery|Danish,Cafe|Brunch,Midtown East|Midtown|Flatiron,2,40.7533193
 Ole & Steen,Bakery|Danish,Cafe|Brunch,Midtown East|Midtown|Flatiron,2,40.7553792,-73.9733321
 Lysée,French|Korean,Desserts,Flatiron,2,40.7391283,-73.9881953
 L'Artusi,Italian,Lunch/Dinner|Drinks,Greenwich Village,3,40.7338469,-74.00518869999999
+Szechuan Mountain House,Chinese,Lunch/Dinner,East Village,2,40.7291176,-73.9885834
+Pranakhon,Thai,Lunch/Dinner|Drinks,Greenwich Village,2,40.733751,-73.9932623
+Smør,Scandinavian,Cafe|Brunch|Drinks|Lunch/Dinner,East Village,2,40.7292953,-73.98153570000001
+Dumpling N' Dips,Dim Sum|Asian,Lunch/Dinner|Quick Bites|To Share,East Village,1,40.7294544,-73.9893159
+FERNS,American,Brunch|Drinks|Lunch/Dinner,East Village,2,40.728828,-73.984082
+YUBU,Korean,Quick Bites,East Village|South Village,1,40.72703569999999,-73.986148
+YUBU,Korean,Quick Bites,East Village|South Village,1,40.7226579,-74.0051181
+KYU NYC,Asian,Lunch/Dinner|Drinks|To Share,Noho,3,40.7256063,-73.99526139999999
