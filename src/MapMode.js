@@ -202,6 +202,28 @@ const nyc = {
 
 const sf = { lat: 37.783, lng: -122.421 };
 
+const cityCenter = {
+    0: nyc,
+    1: sf
+};
+
+const mapZoom = {
+    0: 14,
+    1: 13.5
+};
+
+const asianCuisines = [
+    'Asian',
+    'Thai',
+    'Southeast Asian',
+    'Vietnamese',
+    'Filipino',
+    'Taiwanese',
+    'Burmese',
+    'Laotian',
+    'Nepalese'
+];
+
 function MapMode(props) {
 
 	const mapRef = useRef();
@@ -237,8 +259,8 @@ function MapMode(props) {
 		<div className="map-container">
 			{(isLoaded && props.loaded) ? 
 				<GoogleMap
-				  center={nyc}
-				  zoom={14}
+				  center={cityCenter[props.cityCode]}
+				  zoom={mapZoom[props.cityCode]}
 				  mapContainerStyle={containerStyle}
 				  options={options}
 				>
@@ -271,19 +293,29 @@ function CustomMarker(props) {
 	const getUrl = () => {
 		if(props.res.cuisine.includes('Bagels')) {
 			return (process.env.PUBLIC_URL + '/bagel.png');
-		} else if(props.res.category.includes('Rooftop')) {
+		} else if(props.res.cuisine.includes('Wine')) {
+            return (process.env.PUBLIC_URL + '/wine.png');
+        } else if(props.res.category.includes('Rooftop')) {
 			return (process.env.PUBLIC_URL + '/cocktail.png');
-		} else if(props.res.cuisine.includes('Pizza')) {
+		} else if(props.res.cuisine.includes('Ramen') ||
+                    props.res.cuisine.includes('Udon') ||
+                    props.res.category.includes('Noodles')) {
+            return (process.env.PUBLIC_URL + '/noodles.png');
+        } else if(props.res.cuisine.includes('Sushi')) {
+            return (process.env.PUBLIC_URL + '/sushi.png');
+        } else if(props.res.cuisine.includes('Chicken')) {
+            return (process.env.PUBLIC_URL + '/chicken.png');
+        } else if(props.res.cuisine.includes('Pizza')) {
 			return (process.env.PUBLIC_URL + '/pizza.png');
-		} else if(props.res.cuisine.includes('Bakery')) {
-			return (process.env.PUBLIC_URL + '/bakery.png');
 		} else if(props.res.cuisine.includes('Tea')) {
 			return (process.env.PUBLIC_URL + '/tea.png');
 		} else if(props.res.cuisine.includes('Coffee')) {
 			return (process.env.PUBLIC_URL + '/coffee.png');
 		} else if(props.res.cuisine.includes('Ice Cream')) {
 			return (process.env.PUBLIC_URL + '/icecream.png');
-		} else if(props.res.cuisine.includes('Mediterranean')) {
+		} else if(props.res.cuisine.includes('Bar')) {
+            return (process.env.PUBLIC_URL + '/beer.png');
+        } else if(props.res.cuisine.includes('Mediterranean')) {
 			return (process.env.PUBLIC_URL + '/mediterranean.png');
 		} else if(props.res.cuisine.includes('Korean')) {
 			return (process.env.PUBLIC_URL + '/korean.png');
@@ -299,18 +331,21 @@ function CustomMarker(props) {
 			return (process.env.PUBLIC_URL + '/chinese.png');
 		} else if(props.res.cuisine.includes('French')) {
 			return (process.env.PUBLIC_URL + '/french.png');
-		} else if(props.res.cuisine.includes('Bar')) {
-			return (process.env.PUBLIC_URL + '/beer.png');
 		} else if(props.res.cuisine.includes('Vegan')) {
 			return (process.env.PUBLIC_URL + '/vegan.png');
-		} else if(props.res.cuisine.includes('Asian') || props.res.cuisine.includes('Thai') || props.res.cuisine.includes('Southeast Asian') || props.res.cuisine.includes('Vietnamese') || props.res.cuisine.includes('Filipino') || props.res.cuisine.includes('Taiwanese')) {
+		} else if(props.res.category.includes('Desserts')) {
+            return (process.env.PUBLIC_URL + '/cake.png');
+        } else if(props.res.cuisine.includes('Bakery')) {
+            return (process.env.PUBLIC_URL + '/croissant.png');
+        } else if(asianCuisines.reduce(
+                    (isAsian, cuisine) => !!(isAsian || props.res.cuisine.includes(cuisine)), 
+                    false)) {
 			return (process.env.PUBLIC_URL + '/asian.png');
 		} else if(props.res.category.includes('Brunch')) {
 			return (process.env.PUBLIC_URL + '/avocado.png');
-		} else if(props.res.category.includes('Desserts')) {
-			return (process.env.PUBLIC_URL + '/dessert.png');
-		} 
-		else {
+		} else if(props.res.cuisine.includes('Seafood')) {
+            return (process.env.PUBLIC_URL + '/seafood.png');
+        } else {
 			return (process.env.PUBLIC_URL + '/restaurant.png');
 		}
 	}

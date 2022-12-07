@@ -2,9 +2,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import {extractProp, parse} from './parseData';
 import {ListMode} from './ListMode';
 import Menu from './Menu';
+import Input from './Input';
 import MapMode from './MapMode';
 import Loading from './Loading';
 import restaurantsCSV from './Restaurants.csv';
+import sfCSV from './sfRestaurants.csv';
 import listIcon from './list.png';
 import mapIcon from './map.png';
 import loadData from './loadData';
@@ -16,6 +18,17 @@ import phone from './phone.png';
 import yelp from './yelp.png';
 import xPic from './close.png';
 import './style.scss';
+
+const cityData = [
+	{
+		name: 'New York City',
+		csv: restaurantsCSV
+	},
+	{
+		name: 'San Francisco',
+		csv: sfCSV
+	}
+];
 
 function App() {
 
@@ -35,24 +48,26 @@ function App() {
 		data: {},
 		rest: {}
 	});
+	const [city, setCity] = useState(-1); //0 is nyc, 1 is sf
+	const devMode = false;
 	
+	useEffect(() => {
+		if(city >= 0) csvJSON();
+	}, [city]);
 
 	useEffect(() => {
-		csvJSON();
-	}, []);
-
-	useEffect(() => {
-		//console.log(props.restaurants);
-		let cuisinesTemp = extractProp("cuisine", restaurants);
-		let catTemp = extractProp("category", restaurants);
-		let locationsTemp = extractProp("location", restaurants);
-		setLabels({cuisines: ["All", ...cuisinesTemp], categories: ["All", ...catTemp], locations: [...locationsTemp]});
+		let cuisinesTemp = extractProp("cuisine", restaurants, true);
+		//console.log(cuisinesTemp);
+		let catTemp = extractProp("category", restaurants, true);
+		let locationsTemp = extractProp("location", restaurants, false);
+		const newLabels = {cuisines: [...cuisinesTemp], categories: [...catTemp], locations: [...locationsTemp]};
+		//console.log(newLabels);
+		restaurants.sort((a,b) => a.name.localeCompare(b.name));
+		setLabels(newLabels);
 		setCurRes(restaurants);
 	}, [restaurants]);
 
-
 	useEffect(() => {
-		//console.log('scroll change');
 		if(appState.open || appState.loading) {
 			document.body.classList.add('no-scroll');
 		} else {
@@ -61,7 +76,8 @@ function App() {
 	}, [appState]);
 	
 	const csvJSON = () => {
-		fetch(restaurantsCSV)
+		const csvName = cityData[city].csv;
+		fetch(csvName)
 		.then(response => response.text())
 		.then(transform);
 	}
@@ -69,6 +85,7 @@ function App() {
 	const transform = (str) => {
 		let output = parse(str);
 		setRes(output);
+		//console.log(output.length);
 		setLoaded(true);
 	}
 
@@ -78,17 +95,30 @@ function App() {
 
 	return (
 		<div className="App">
-			<header className="App-header">
-				<h1>BON VIVEUR</h1>
-				<h2>New York City</h2>
-				<div onClick={() => setList(!list)} className='nav'><img src={list ? mapIcon : listIcon} style={{width:'100%'}}/></div>
-				<Menu setRes={setCurRes} restaurants={restaurants} labels={labels}/>
-			</header>
-			{(appState.loading || appState.open) ? <PopUp state={appState} data={appState.data} close={() => setAppState({...appState, open: false})} /> : <div></div>}
-			{list ? 
-				<ListMode restaurants={curRes} fetchData={fetchData} loaded={loaded} />
+			{city < 0 ?
+				<div className="city-selection-wrapper">
+					<div className="city-selection">
+						<h1>Which city would you like to see?</h1>
+						<p onClick={() => setCity(0)}>New York City</p>
+						<p onClick={() => setCity(1)}>San Francisco</p>
+					</div>	
+				</div>
 				:
-				<MapMode restaurants={curRes} setRes={setRes} loaded={loaded} fetchData={fetchData} />
+				<div>
+					<header className="App-header">
+						<h1 onClick={() => setCity(-1)}>BON VIVEUR</h1>
+						<h2>{cityData[city].name}</h2>
+						<div onClick={() => setList(!list)} className='nav'><img src={list ? mapIcon : listIcon} style={{width:'100%'}}/></div>
+						<Menu setRes={setCurRes} restaurants={restaurants} labels={labels} devMode={devMode}/>
+					</header>
+					{devMode ? <Input labels={labels} city={city} restaurants={curRes} /> : <></>}
+					{(appState.loading || appState.open) ? <PopUp state={appState} data={appState.data} close={() => setAppState({...appState, open: false})} /> : <div></div>}
+					{list ? 
+						<ListMode restaurants={curRes} fetchData={fetchData} loaded={loaded} />
+						:
+						<MapMode restaurants={curRes} loaded={loaded} fetchData={fetchData} cityCode={city} />
+					}
+				</div>
 			}
 		</div>
 	);

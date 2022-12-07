@@ -68,6 +68,7 @@ select {
 	text-align: center;
 	//padding: 1em 0;
 	padding: 4em 3em 1em 3em;
+	cursor: pointer;
 }
 
 .nav {
@@ -78,6 +79,47 @@ select {
 	width: 50px;
 	cursor: pointer;
 	z-index: 50;
+}
+
+.city-selection-wrapper {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	.city-selection {
+		width: 400px;
+		text-align: center;
+		border: 1px solid black;
+		padding: 3em 1em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		h1 {
+			font-size: 1.7em;
+			margin-bottom: 1em;
+		}
+
+		p {
+			padding: 1em;
+			border: 1px solid black;
+			width: 200px;
+			margin: 0.5em;
+			cursor: pointer;
+			transition: 0.3s;
+			font-size: 0.9em;
+			box-shadow: 3px 3px 0 #000;
+
+			&:hover {
+				background: black;
+				color: $bg-color;
+				box-shadow: 3px 3px 0 #000;
+			}
+		}
+	}
 }
 
 .eateries-wrapper {
@@ -191,6 +233,8 @@ select {
 
 .eatery {
 	width: 25%;
+	padding: 0 15px;
+	box-sizing: border-box;
 
 	h3 {
 		font-family: Eksell Display;
@@ -300,6 +344,7 @@ select {
 	letter-spacing: 0;
 	margin-top: 0.2em;
 	position: relative;
+	cursor: pointer;
 
 	&:after {
 		content: '';
@@ -332,8 +377,8 @@ select {
 		max-height: 300px;
 		overflow: scroll;
 		padding: 0.5em 0;
-		top: 0;
-		left: 0;
+		//top: 0;
+		left: -1px;
 		z-index: 45;
 
 		label {
@@ -343,15 +388,22 @@ select {
 			font-size: 12px;
 			text-transform: none;
 			letter-spacing: 0;
-			margin: 2px 10px;
+			margin: 5px 10px;
 			cursor: pointer;
+			height: 15px;
+		}
+
+		p {
+			margin: 0;
+			line-height: 14px;
+			margin: 5px 3px 3px 3px;
 		}
 
 		.custom-checkbox {
 			background: $bg-color;
 			border: 1px solid black;
-			width: 10px;
-			height: 10px;
+			width: 12px;
+			height: 12px;
 			margin: 3px;
 
 			&.checked {
@@ -388,6 +440,115 @@ select {
 		animation: slide 2s infinite;
 		width: 150px;
 		transform-origin: left center;
+	}
+}
+
+.input-form {
+	position: relative;
+	max-width: 600px;
+	margin: 30px auto;
+	border: 1px solid black;
+	padding: 20px 50px;
+	max-height: 2000px;
+	transition: .4s ease;
+
+	&.minimized {
+		max-height: 20px;
+		overflow: hidden;
+	}
+
+	.minimize-icon {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+		font-size: 24px;
+	}
+
+	.input-section {
+		margin: 15px 0;
+
+		&.title {
+			display: flex;
+			align-items: center;
+
+			input[type="text"] {
+				height: 20px;
+				margin-left: 15px;
+				width: 40%;
+				flex-shrink: 2;
+			}
+		}
+	}
+
+	.input-options {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	label {
+		//display: inline-block;
+		height: 22px;
+		width: 50%;
+		font-size: 12px;
+	}
+
+	input[type="checkbox"] {
+		background: $bg-color;
+		border: 1px solid black;
+	}
+
+	input[type="text"] {
+		background: $bg-color;
+		border-bottom: 1px solid black;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		padding: 5px;
+	}
+
+	input[type="submit"], input[type="reset"] {
+		padding: 5px 10px;
+		margin: 0 3px;
+		border: 1px solid black;
+		background: $bg-color;
+		transition: 0.3s linear;
+		cursor: pointer;
+
+		&:hover {
+			background: black;
+			color: $bg-color;
+		}
+	}
+
+	.status-bar {
+		width: 100%;
+		border: 1px solid $bg-color;
+		margin: 15px 0;
+		padding: 15px;
+		font-size: 12px;
+
+		p {margin: 0;}
+
+		&.warning {
+			border-color: yellow;
+			background: #fff3cd;
+			color: black;
+		}
+
+		&.error {
+			border-color: red;
+			background: #f8d7db;
+			color: red;
+		}
+
+		&.success {
+			border-color: green;
+			background: #d1e7dd;
+			color: green;
+		}
 	}
 }
 

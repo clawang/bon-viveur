@@ -3,10 +3,12 @@ import {multiFilter} from './parseData';
 import xPic from './close.png';
 
 const subcategories = {
-	'Asian': ['Southeast Asian', 'Chinese', 'Japanese', 'Korean', 'Taiwanese', 'Thai', 'Vietnamese', 'Filipino', 'Indian'],
-	'Southeast Asian': ['Thai', 'Vietnamese', 'Filipino', 'Malaysian'],
+	'Asian': ['Southeast Asian', 'Chinese', 'Japanese', 'Korean', 'Taiwanese', 'Thai', 'Vietnamese', 'Filipino', 'Indian', 'Nepalese'],
+	'Southeast Asian': ['Thai', 'Vietnamese', 'Filipino', 'Malaysian', 'Burmese', 'Laotian'],
 	'American': ['Southern'],
-	'Chinese': ['Dim Sum']
+	'Chinese': ['Dim Sum'],
+	'Scandinavian': ['Danish'],
+	'Latin American': ['South American','Mexican'],
 };
 
 function Menu(props) {
@@ -15,7 +17,8 @@ function Menu(props) {
 		cuisine: "All",
 		category: "All",
 		location: [],
-		price: "All"
+		price: "All",
+		name: "",
 	});
 
 	useEffect(() => {
@@ -30,6 +33,10 @@ function Menu(props) {
 
 	const filter = () => {
 		let tempArr = props.restaurants;
+		if(filters.name) {
+			tempArr = tempArr.filter(r => r.name.toLowerCase().includes(String(filters.name).toLowerCase()));
+			return tempArr;
+		}
 		if(filters.cuisine !== "All") {
 			if(subcategories.hasOwnProperty(filters.cuisine)) {
 				//console.log('subcat');
@@ -74,21 +81,17 @@ function Menu(props) {
 				<label>
 					Cuisine
 					<select value={filters.cuisine} name="cuisine" onChange={handleChange}>
+					  <option value="All">All</option>
 					  {props.labels.cuisines.map(c => <option value={c}>{c}</option>)}
 					</select>
 				</label>
 				<label>
 					Category
 					<select value={filters.category} name="category" onChange={handleChange}>
+					  <option value="All">All</option>
 					  {props.labels.categories.map(c => <option value={c}>{c}</option>)}
 					</select>
 				</label>
-				{/*<label>
-					Location
-					<select value={filters.location} name="location" onChange={handleChange}>
-					  {props.labels.locations.map(c => <option value={c}>{c}</option>)}
-					</select>
-				</label>*/}
 				<label>
 					Location
 					<MultiSelect name={'location'} options={props.labels.locations} filters={filters} setFilters={setFilters} />
@@ -106,6 +109,13 @@ function Menu(props) {
 				<button onClick={reset}>Reset</button>
 				<button onClick={random}>Random</button>
 			</form>
+			{props.devMode ? 
+				<label> Search
+					<input type="text" placeholder="Search" name="name" onChange={handleChange}></input>
+				</label>
+				:
+				<></>
+			}
 		</div>
 	);
 }
@@ -115,6 +125,10 @@ function MultiSelect(props) {
 	const [selected, setSelected] = useState([]);
 	const [labels, setLabels] = useState([]);
 	const [open, setOpen] = useState(false);
+	const [options, setOptions] = useState({
+		previous: -1,
+		check: true
+	});
 	const wrapperRef = useRef(null);
 	useOutsideAlerter(wrapperRef, open, setOpen);
 
@@ -133,29 +147,46 @@ function MultiSelect(props) {
 		}
 	}, [props.filters]);
 
-	const check = (value) => {
-		let tempArr = selected;
-		if(tempArr.includes(value)) {
-			tempArr = tempArr.filter(v => v !== value);
-			//if(tempArr.length === 0) tempArr = [];
-		} else {
-			if(tempArr[0] !== 'Any') {
-				tempArr.push(value);
-			} else {
-				tempArr = [value];
+	const check = (event, value) => {
+		//console.log(event.shiftKey);
+		let tempList = selected;
+		let selecting = tempList.includes(value) ? false : true;
+		let tempLabels = [...labels];
+		let index = tempLabels.findIndex(l => l.name === value);
+		if(event.shiftKey && options.previous >= 0) {
+			let start = Math.min(options.previous, index);
+			let end = Math.max(options.previous, index);
+			for(let i = start; i <= end; i++) {
+				console.log("multi");
+				let obj = tempLabels[i];
+				obj.checked = selecting;
+				tempList = updateItem(tempList, i, obj.name, selecting);
 			}
+		} else {
+			let obj = tempLabels[index];
+			obj.checked = selecting;
+			tempList = updateItem(tempList, index, value, selecting);
 		}
-		let temp = [...labels];
-		let index = temp.findIndex(l => l.name === value);
-		let obj = temp[index];
-		obj.checked = !obj.checked;
-		props.setFilters({...props.filters, [props.name]: tempArr});
-		if(tempArr.length === 0) setSelected(['Any']);
-		else setSelected(tempArr);
+		console.log(tempList);
+		props.setFilters({...props.filters, [props.name]: tempList});
+		if(tempList.length === 0) setSelected(['Any']);
+		else setSelected(tempList);
+		setOptions({...options, previous: index});
 	}
 
+	const updateItem = (tempList, index, name, selecting) => {
+		console.log("selecting: "+index);
+		if(selecting) {
+			if(tempList[0] !== 'Any') tempList.push(name);
+			else tempList = [name];
+		} else {
+			tempList = tempList.filter(v => v !== name);
+		}
+		return tempList;
+	};
+
 	const handleClick = () => {
-		if(!open) setOpen(true);
+		setOpen(!open);
 	}
 
 	const getLabel = () => {
@@ -176,6 +207,7 @@ function MultiSelect(props) {
 		setSelected(['Any']);
 		resetLabels();
 		props.setFilters({...props.filters, [props.name]: []});
+		setOpen(false);
 	}
 
 	//console.log(selected);
@@ -189,7 +221,7 @@ function MultiSelect(props) {
 			</div>
 			{open ?
 				<div className="multiselect-options">
-					{labels.map(op => <label><CheckBox handleClick={() => check(op.name)} checked={op.checked}/>{op.name}</label>)}
+					{labels.map((op, i) => <label key={i}><CheckBox handleClick={(e) => check(e, op.name)} checked={op.checked} /><p>{op.name}</p></label>)}
 				</div>
 				:
 				<div></div>
@@ -202,9 +234,13 @@ function MultiSelect(props) {
 function CheckBox(props) {
 	const [checked, setChecked] = useState(props.checked);
 
-	const handleClick = () => {
+	useEffect(() => {
+		setChecked(props.checked);
+	}, [props.checked]);
+
+	const handleClick = (e) => {
 		setChecked(!checked);
-		props.handleClick();
+		props.handleClick(e);
 	}
 
 	return (
