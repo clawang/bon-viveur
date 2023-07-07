@@ -17,6 +17,7 @@ import pin from './mappin.png';
 import phone from './phone.png';
 import yelp from './yelp.png';
 import xPic from './close.png';
+import csv from './world.csv';
 import './style.scss';
 
 const cityData = [
@@ -27,6 +28,10 @@ const cityData = [
 	{
 		name: 'San Francisco',
 		csv: sfCSV
+	},
+	{
+		name: 'World',
+		csv: csv
 	}
 ];
 
@@ -48,8 +53,9 @@ function App() {
 		data: {},
 		rest: {}
 	});
-	const [city, setCity] = useState(-1); //0 is nyc, 1 is sf
+	const [city, setCity] = useState(-1); //0 is nyc, 1 is sf, 2 is world
 	const devMode = false;
+	const enable_world = devMode;
 	
 	useEffect(() => {
 		if(city >= 0) csvJSON();
@@ -61,8 +67,11 @@ function App() {
 		let catTemp = extractProp("category", restaurants, true);
 		let locationsTemp = extractProp("location", restaurants, false);
 		const newLabels = {cuisines: [...cuisinesTemp], categories: [...catTemp], locations: [...locationsTemp]};
+		if(city === 2) {
+			let temp = extractProp("area", restaurants, true);
+			// locationsTemp.concat(temp);
+		}
 		//console.log(newLabels);
-		restaurants.sort((a,b) => a.name.localeCompare(b.name));
 		setLabels(newLabels);
 		setCurRes(restaurants);
 	}, [restaurants]);
@@ -99,8 +108,8 @@ function App() {
 				<div className="city-selection-wrapper">
 					<div className="city-selection">
 						<h1>Which city would you like to see?</h1>
-						<p onClick={() => setCity(0)}>New York City</p>
-						<p onClick={() => setCity(1)}>San Francisco</p>
+						{(enable_world ? cityData : cityData.filter(city => city.name !== 'World'))
+							.map((data, index) => <p onClick={() => setCity(index)}>{data.name}</p>)}
 					</div>	
 				</div>
 				:
@@ -109,7 +118,7 @@ function App() {
 						<h1 onClick={() => setCity(-1)}>BON VIVEUR</h1>
 						<h2>{cityData[city].name}</h2>
 						<div onClick={() => setList(!list)} className='nav'><img src={list ? mapIcon : listIcon} style={{width:'100%'}}/></div>
-						<Menu setRes={setCurRes} restaurants={restaurants} labels={labels} devMode={devMode}/>
+						<Menu setRes={setCurRes} restaurants={restaurants} city={city} labels={labels} devMode={devMode}/>
 					</header>
 					{devMode ? <Input labels={labels} city={city} restaurants={curRes} /> : <></>}
 					{(appState.loading || appState.open) ? <PopUp state={appState} data={appState.data} close={() => setAppState({...appState, open: false})} /> : <div></div>}

@@ -232,16 +232,20 @@ select {
 }
 
 .eatery {
-	width: 25%;
-	padding: 0 15px;
+	width: 24%;
+	margin: 5px;
 	box-sizing: border-box;
+
+	.eatery-content {
+		padding: 5px 15px;
+	}
 
 	h3 {
 		font-family: Eksell Display;
 		font-weight: 100;
 		letter-spacing: 1px;
 		font-size: 22px;
-		margin-bottom: 0.5em;
+		margin: 0.5em 0;
 		cursor: pointer;
 
 		&:hover {
@@ -259,11 +263,28 @@ select {
 		color: #333;
 		font-size: 12px;
 	}
+
+	.eatery-banner {
+		background: black;
+		text-align: center;
+		padding: 6px 3px 3px 3px;
+
+		p {
+			margin: 0;
+			color: $bg-color;
+		}
+	}
+
+	&.best {
+		border: 1px double black;
+		box-shadow: 2px 2px 0 black;
+	}
 }
 
 .gm-style-iw .eatery {
 	width: 100%;
 	max-width: 250px;
+	margin: 0;
 
 	h3 {
 		font-size:18px;
@@ -331,6 +352,14 @@ select {
 		margin-top: 0.2em;
 		border: 1px solid black;
 		background: $bg-color;
+	}
+
+	input[type="text"] {
+		width: 100%;
+		margin-top: 0.2em;
+		border: 1px solid black;
+		background: $bg-color;
+		padding:6px;
 	}
 }
 

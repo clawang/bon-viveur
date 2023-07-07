@@ -22,6 +22,8 @@ const statuses = [
 	}
 ];
 
+const cityNames = ['nyc', 'sf', 'world'];
+
 function Input(props) {
 
 	const [labels, setLabels] = useState(props.labels);
@@ -32,8 +34,10 @@ function Input(props) {
 		location: []
 	});
 	const [price, setPrice] = useState(0);
+	const [rating, setRating] = useState(0.0);
 	const [otherCuisine, setOtherCuisine] = useState('');
 	const [otherLocation, setOtherLocation] = useState('');
+	const [otherCategory, setOtherCategory] = useState('');
 	const [status, setStatus] = useState(0); //0 is unsent, 1 is client error, 2 is success, 3 is servor error
 	const [errorMessage, setError] = useState('');
 	const [open, setOpen] = useState(true);
@@ -67,17 +71,18 @@ function Input(props) {
 	    if(validateInput()) {
 		    if(otherCuisine && data.cuisine.indexOf(otherCuisine) < 0) data.cuisine.push(otherCuisine);
 		    if(otherLocation && data.location.indexOf(otherLocation) < 0) data.location.push(otherLocation);
+		    if(otherCategory && data.category.indexOf(otherCategory) < 0) data.category.push(otherCategory);
 
 		    const info = {
 		      name,
 		      cuisine: data.cuisine.reduce((prev, cur) => prev + '|' + cur),
 		      category: data.category.reduce((prev, cur) => prev + '|' + cur),
-		      location: data.location.reduce((prev, cur) => prev + '|' + cur),
-		      price: Number(price)
+		      location: data.location,
+		      price: Number(price),
+		      rating: Number(rating)
 		    };
 
-		    const city = props.city === 0 ? 'nyc' : 'sf';
-		    const url = 'http://localhost:8000/' + city;
+		    const url = 'http://localhost:8000/' + cityNames[props.city];
 
 		    axios
 		      .post(url, info)
@@ -101,7 +106,7 @@ function Input(props) {
 	const validateInput = () => {
 		if(data.cuisine.length <= 0 && !otherCuisine) {
 			setError('No cuisines were selected.');
-		} else if(data.category.length <= 0) {
+		} else if(data.category.length <= 0 && !otherCategory) {
 			setError('No categories were selected.');
 		} else if(data.location.length <= 0 && !otherLocation) {
 			setError('No locations were selected.');
@@ -139,7 +144,7 @@ function Input(props) {
 				</div>
 				<div className="input-section">
 					<p>What cuisine is this restuarant?</p>
-					<div className="input-options" style={{height: (props.labels.cuisines.length/2 * 25) + 'px'}}>
+					<div className="input-options" style={{height: (props.labels.cuisines.length/2 * 25 + 20) + 'px'}}>
 						{props.labels.cuisines.map((cuisine) =>
 							<label><input type="checkbox" name="cuisine" value={cuisine} onChange={handleChange} />{cuisine}</label>
 						)}
@@ -148,15 +153,16 @@ function Input(props) {
 				</div>
 				<div className="input-section">
 					<p>What categories does it fall under?</p>
-					<div className="input-options" style={{height: (props.labels.categories.length/2 * 25) + 'px'}}>
+					<div className="input-options" style={{height: (props.labels.categories.length/2 * 25 + 20) + 'px'}}>
 						{props.labels.categories.map((category) =>
 							<label><input type="checkbox" name="category" value={category} onChange={handleChange} />{category}</label>
 						)}
+						<label><input type="checkbox" checked={otherCategory} />Other:<input type="text" value={otherCategory} onChange={e => setOtherCategory(e.target.value)}/></label>
 					</div>
 				</div>
 				<div className="input-section">
 					<p>Where are the locations?</p>
-					<div className="input-options" style={{height: (props.labels.locations.length/2 * 25) + 'px'}}>
+					<div className="input-options" style={{height: (props.labels.locations.length/2 * 25 + 20) + 'px'}}>
 						{props.labels.locations.map((location) =>
 							<label><input type="checkbox" name="location" value={location} onChange={handleChange} />{location}</label>
 						)}
@@ -166,6 +172,10 @@ function Input(props) {
 				<div className="input-section">
 					<p>What price range is it?</p>
 					<input type="number" min="1" max="4" value={price} onChange={e => setPrice(e.target.value)} />
+				</div>
+				<div className="input-section">
+					<p>What would you rate it out of 5?</p>
+					<input type="number" min="0.0" max="5.0" value={rating} step="0.1" onChange={e => setRating(e.target.value)} />
 				</div>
 				<input type="reset" onClick={clearForm}/>
 				<input type="submit"/>

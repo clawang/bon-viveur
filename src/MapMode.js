@@ -202,14 +202,18 @@ const nyc = {
 
 const sf = { lat: 37.783, lng: -122.421 };
 
+const world = {lat: 34.0125235, lng: -118.2964112};
+
 const cityCenter = {
     0: nyc,
-    1: sf
+    1: sf,
+    2: world
 };
 
 const mapZoom = {
     0: 14,
-    1: 13.5
+    1: 13.5,
+    2: 12
 };
 
 const asianCuisines = [
@@ -293,11 +297,15 @@ function CustomMarker(props) {
 	const getUrl = () => {
 		if(props.res.cuisine.includes('Bagels')) {
 			return (process.env.PUBLIC_URL + '/bagel.png');
-		} else if(props.res.cuisine.includes('Wine')) {
+		} else if(props.res.cuisine.includes('Sandwiches')) {
+            return (process.env.PUBLIC_URL + '/sandwich.png');
+        } else if(props.res.cuisine.includes('Wine')) {
             return (process.env.PUBLIC_URL + '/wine.png');
         } else if(props.res.category.includes('Rooftop')) {
 			return (process.env.PUBLIC_URL + '/cocktail.png');
-		} else if(props.res.cuisine.includes('Ramen') ||
+		} else if(props.res.cuisine.includes('Brewery')) {
+            return (process.env.PUBLIC_URL + '/beer.png');
+        } else if(props.res.cuisine.includes('Ramen') ||
                     props.res.cuisine.includes('Udon') ||
                     props.res.category.includes('Noodles')) {
             return (process.env.PUBLIC_URL + '/noodles.png');
@@ -314,7 +322,7 @@ function CustomMarker(props) {
 		} else if(props.res.cuisine.includes('Ice Cream')) {
 			return (process.env.PUBLIC_URL + '/icecream.png');
 		} else if(props.res.cuisine.includes('Bar')) {
-            return (process.env.PUBLIC_URL + '/beer.png');
+            return (process.env.PUBLIC_URL + '/cocktail.png');
         } else if(props.res.cuisine.includes('Mediterranean')) {
 			return (process.env.PUBLIC_URL + '/mediterranean.png');
 		} else if(props.res.cuisine.includes('Korean')) {

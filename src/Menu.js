@@ -8,7 +8,8 @@ const subcategories = {
 	'American': ['Southern'],
 	'Chinese': ['Dim Sum'],
 	'Scandinavian': ['Danish'],
-	'Latin American': ['South American','Mexican'],
+	'Latin American': ['South American','Mexican','Peruvian','Venezuelan'],
+	'South American': ['Peruvian','Venezuelan','Brazilian','Argentinian']
 };
 
 function Menu(props) {
@@ -19,6 +20,7 @@ function Menu(props) {
 		location: [],
 		price: "All",
 		name: "",
+		sort: "rating"
 	});
 
 	useEffect(() => {
@@ -60,6 +62,12 @@ function Menu(props) {
 			tempArr = multiFilter(tempArr, 'location', filters.location);
 		}
 		if(filters.price !== "All") tempArr = tempArr.filter(r => r.price == filters.price);
+		if(tempArr[0]) {
+			tempArr[0].best = true;
+		}
+		if(filters.sort === "rating") {
+			tempArr.sort((a,b) => Number(b.rating) - Number(a.rating));
+		}
 		return tempArr;
 	}
 
@@ -110,9 +118,17 @@ function Menu(props) {
 				<button onClick={random}>Random</button>
 			</form>
 			{props.devMode ? 
-				<label> Search
-					<input type="text" placeholder="Search" name="name" onChange={handleChange}></input>
-				</label>
+				<form>
+					<label> Search
+						<input type="text" placeholder="Search name of restaurant" name="name" onChange={handleChange}></input>
+					</label>
+					<label> Sort
+						<select value={filters.sort} name="sort" onChange={handleChange}>
+						  <option value="recent">Recent</option>
+						  <option value="rating">Rating</option>
+						</select>
+					</label>
+				</form>
 				:
 				<></>
 			}
