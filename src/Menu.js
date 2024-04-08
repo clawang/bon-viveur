@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import {multiFilter} from './parseData';
-import xPic from './close.png';
+import {multiFilter} from './util/parseData';
+import { getDistance, getLatFromZoom } from './util/mapUtil';
+import xPic from './assets/close.png';
 
 const subcategories = {
 	'Asian': ['Southeast Asian', 'Chinese', 'Japanese', 'Korean', 'Taiwanese', 'Thai', 'Vietnamese', 'Filipino', 'Indian', 'Nepalese'],
@@ -8,12 +9,11 @@ const subcategories = {
 	'American': ['Southern'],
 	'Chinese': ['Dim Sum'],
 	'Scandinavian': ['Danish'],
-	'Latin American': ['South American','Mexican','Peruvian','Venezuelan'],
+	'Latin American': ['South American','Mexican','Peruvian','Venezuelan','Salvadoran'],
 	'South American': ['Peruvian','Venezuelan','Brazilian','Argentinian']
 };
 
 function Menu(props) {
-
 	const [filters, setFilters] = useState({
 		cuisine: "All",
 		category: "All",
@@ -27,14 +27,16 @@ function Menu(props) {
 		let tempArr = filter();
 		//console.log(tempArr);
 		props.setRes(tempArr);
-	}, [filters]);
+	}, [filters, props.center]);
 
 	const handleChange = (evt, num) => {
 		setFilters({...filters, [evt.target.name]: evt.target.value});
 	};
 
 	const filter = () => {
-		let tempArr = props.restaurants;
+		let tempArr = props.restaurants.filter(value =>
+			getDistance({ lat: value.lat, lng: value.lng }, props.center) < getLatFromZoom(props.zoom) / 35000
+		);
 		if(filters.name) {
 			tempArr = tempArr.filter(r => r.name.toLowerCase().includes(String(filters.name).toLowerCase()));
 			return tempArr;
@@ -61,7 +63,7 @@ function Menu(props) {
 		if(filters.location.length > 0) {
 			tempArr = multiFilter(tempArr, 'location', filters.location);
 		}
-		if(filters.price !== "All") tempArr = tempArr.filter(r => r.price == filters.price);
+		if(filters.price !== "All") tempArr = tempArr.filter(r => r.price === filters.price);
 		if(tempArr[0]) {
 			tempArr[0].best = true;
 		}
@@ -84,24 +86,30 @@ function Menu(props) {
 	}
 
 	return (
-		<div className="cuisines">
+		<div className="menu-wrapper">
 			<form>
+				<label>
+					City
+					<select value={props.city} name="city" onChange={(e) => props.setCity(Number(e.target.value))}>
+					  {props.cities.map((city, index) => <option value={index}>{city.name}</option>)}
+					</select>
+				</label>
 				<label>
 					Cuisine
 					<select value={filters.cuisine} name="cuisine" onChange={handleChange}>
 					  <option value="All">All</option>
-					  {props.labels.cuisines.map(c => <option value={c}>{c}</option>)}
+					  {props.labels.cuisines.map(c => <option value={c.name}>{c.name}</option>)}
 					</select>
 				</label>
 				<label>
 					Category
 					<select value={filters.category} name="category" onChange={handleChange}>
 					  <option value="All">All</option>
-					  {props.labels.categories.map(c => <option value={c}>{c}</option>)}
+					  {props.labels.categories.map(c => <option value={c.name}>{c.name}</option>)}
 					</select>
 				</label>
 				<label>
-					Location
+					Neighborhood
 					<MultiSelect name={'location'} options={props.labels.locations} filters={filters} setFilters={setFilters} />
 				</label>
 				<label>
@@ -114,8 +122,10 @@ function Menu(props) {
 					  <option value="4">$$$$</option>
 					</select>
 				</label>
-				<button onClick={reset}>Reset</button>
-				<button onClick={random}>Random</button>
+				<div className="button-wrapper">
+					<button onClick={reset}>Reset</button>
+					<button onClick={random}>Random</button>
+				</div>
 			</form>
 			{props.devMode ? 
 				<form>
@@ -215,7 +225,7 @@ function MultiSelect(props) {
 	}
 
 	const resetLabels = () => {
-		let tempArr = props.options.map(m => {return {name: m, checked: false}});
+		let tempArr = props.options.map(m => {return {...m, checked: false}});
 		setLabels(tempArr);
 	}
 
@@ -242,7 +252,7 @@ function MultiSelect(props) {
 				:
 				<div></div>
 			}
-			<div className="remove-all" onClick={remove}><img src={xPic} style={{width: '10px'}}/></div>
+			<div className="remove-all" onClick={remove}><img src={xPic} style={{width: '10px'}} alt="close"/></div>
 		</div>
 	);
 }

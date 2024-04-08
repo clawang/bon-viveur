@@ -1,21 +1,21 @@
 @font-face {
   	font-family: Maison Neue;
-  	src: url('MaisonNeue-Book.ttf'); /* IE9 Compat Modes */
+  	src: url('./assets/MaisonNeue-Book.ttf'); /* IE9 Compat Modes */
 }
 
 @font-face {
   	font-family: Ivy Mode Regular;
-  	src: url('IvyMode-Regular.ttf'); /* IE9 Compat Modes */
+  	src: url('./assets/IvyMode-Regular.ttf'); /* IE9 Compat Modes */
 }
 
 @font-face {
   	font-family: Ivy Mode Light Italic;
-  	src: url('IvyMode-LightItalic.ttf'); /* IE9 Compat Modes */
+  	src: url('./assets/IvyMode-LightItalic.ttf'); /* IE9 Compat Modes */
 }
 
 @font-face {
   	font-family: Eksell Display;
-  	src: url('Eksell-Display-Small.otf'); /* IE9 Compat Modes */
+  	src: url('./assets/Eksell-Display-Small.otf'); /* IE9 Compat Modes */
 }
 
 $bg-color: #f1e5d5;
@@ -27,6 +27,11 @@ $bg-color: #f1e5d5;
 
 html {
 	background-color: $bg-color;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
 }
 
 h1 {
@@ -54,6 +59,11 @@ select {
 	padding: 5px;
 }
 
+#root, .App {
+	width: 100%;
+	height: 100%;
+}
+
 .no-scroll {
 	width: 100%;
 	height: 100vh;
@@ -62,23 +72,29 @@ select {
 
 .App {
 	//padding: 3em;
+	display: flex;
 }
 
 .App-header {
-	text-align: center;
+	text-align: left;
 	//padding: 1em 0;
-	padding: 4em 3em 1em 3em;
-	cursor: pointer;
+	padding: 3em 2em 1em 2em;
+	// cursor: pointer;
+	overflow-y: scroll;
+}
+
+.content-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
 }
 
 .nav {
-	position: fixed;
-	right: 3em;
-	top:3em;
 	font-size: 12px;
 	width: 50px;
 	cursor: pointer;
 	z-index: 50;
+	margin-bottom: 1em;
 }
 
 .city-selection-wrapper {
@@ -128,8 +144,9 @@ select {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto 20px;
-	padding: 0 2em;
+	padding: 2em;
 	box-sizing: border-box;
+	justify-content: space-between;
 }
 
 .dialog-wrapper {
@@ -232,7 +249,7 @@ select {
 }
 
 .eatery {
-	width: 24%;
+	width: 250px;
 	margin: 5px;
 	box-sizing: border-box;
 
@@ -295,9 +312,8 @@ select {
 	border-radius: 0;
 }
 
-.cuisines {
+.menu-wrapper {
 	width: 100%;
-	max-width: 1200px;
 	margin: 3em auto 0;
 	text-align: left;
 	//box-sizing: border-box;
@@ -311,25 +327,22 @@ select {
 
 	form {
 		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: flex-start;
 	}
 
 	label {
-		width: 30%;
-		max-width: 200px;
-		margin: 0 1em;
+		width: 100%;
+		// max-width: 200px;
+		margin: 2em 0;
 		font-size: 0.6em;
 		text-transform: uppercase;
 		letter-spacing: 1px;
+		display: block;
 	}
 
 	input[type="reset"], button {
 		height: 28px;
-		margin-left: 0.5em;
-		margin-top: 0.8em;
+		margin-right: 0.5em;
+		margin-top: 0em;
 		background: #f1e5d5;
 		border:1px solid black;
 		cursor: pointer;
@@ -451,7 +464,7 @@ select {
 
 .map-container {
 	width:100%;
-	height: 700px;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -477,7 +490,7 @@ select {
 	max-width: 600px;
 	margin: 30px auto;
 	border: 1px solid black;
-	padding: 20px 50px;
+	padding: 20px;
 	max-height: 2000px;
 	transition: .4s ease;
 
@@ -498,14 +511,14 @@ select {
 		margin: 15px 0;
 
 		&.title {
-			display: flex;
+			// display: flex;
 			align-items: center;
 
 			input[type="text"] {
 				height: 20px;
-				margin-left: 15px;
-				width: 40%;
+				width: 100%;
 				flex-shrink: 2;
+				box-sizing: border-box;
 			}
 		}
 	}
@@ -519,7 +532,7 @@ select {
 
 	label {
 		//display: inline-block;
-		height: 22px;
+		// height: 22px;
 		width: 50%;
 		font-size: 12px;
 	}
@@ -536,6 +549,8 @@ select {
 		border-left: none;
 		border-right: none;
 		padding: 5px;
+		box-sizing: border-box;
+		width: 100%;
 	}
 
 	input[type="submit"], input[type="reset"] {
@@ -551,34 +566,44 @@ select {
 			color: $bg-color;
 		}
 	}
+}
 
-	.status-bar {
-		width: 100%;
-		border: 1px solid $bg-color;
-		margin: 15px 0;
-		padding: 15px;
-		font-size: 12px;
 
-		p {margin: 0;}
+.success-button {
+	background-color: green;
+}
 
-		&.warning {
-			border-color: yellow;
-			background: #fff3cd;
-			color: black;
-		}
+.status-bar {
+	width: 100%;
+	border: 1px solid $bg-color;
+	margin: 15px 0;
+	padding: 15px;
+	font-size: 12px;
 
-		&.error {
-			border-color: red;
-			background: #f8d7db;
-			color: red;
-		}
+	p {margin: 0;}
 
-		&.success {
-			border-color: green;
-			background: #d1e7dd;
-			color: green;
-		}
+	&.warning {
+		border-color: yellow;
+		background: #fff3cd;
+		color: black;
 	}
+
+	&.error {
+		border-color: red;
+		background: #f8d7db;
+		color: red;
+	}
+
+	&.success {
+		border-color: green;
+		background: #d1e7dd;
+		color: green;
+	}
+}
+
+.dialog.input {
+	display: block;
+	height: auto;
 }
 
 @keyframes slide {
@@ -609,13 +634,36 @@ select {
 }
 
 @media only screen and (max-width: 800px) {
+	body {
+		height: auto;
+	}
+
+	.App {
+		flex-direction: column;
+	}
+
+	.content-wrapper {
+		height: auto;
+		overflow: hidden;
+	}
+
+	.nav {
+		position: fixed;
+		top: 2em;
+		right: 2em;
+	}
+
   	.eatery {
-  		width: 50%;
+  		width: 200px;
   		//margin: 0 auto;
   	}	
 }
 
 @media only screen and (max-width: 600px) {
+	.eateries-wrapper {
+		padding: 20px;
+	}
+
   	.eatery {
   		width: 70%;
   		margin: 0 auto;

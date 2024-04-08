@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { searchGoogle, addData } from './util/addData';
+import xPic from './assets/close.png';
 
 const statuses = [
 	{
@@ -22,11 +23,8 @@ const statuses = [
 	}
 ];
 
-const cityNames = ['nyc', 'sf', 'world'];
-
 function Input(props) {
 
-	const [labels, setLabels] = useState(props.labels);
 	const [name, setName] = useState('');
 	const [data, setData] = useState({
 		cuisine: [],
@@ -41,78 +39,88 @@ function Input(props) {
 	const [status, setStatus] = useState(0); //0 is unsent, 1 is client error, 2 is success, 3 is servor error
 	const [errorMessage, setError] = useState('');
 	const [open, setOpen] = useState(true);
+	const [results, setResults] = useState([]);
+	const [labels, setLabels] = useState(props.labels);
 
 	useEffect(() => {
-		let newLabels = props.labels;
-		newLabels.cuisines.shift();
-		newLabels.categories.shift();
-		setLabels(newLabels);
+		setLabels(props.labels);
 	}, [props.labels]);
 
 	const updateName = (event) => {
 		setName(event.target.value);
 	}
 
-	const handleChange = (event) => {
-		let newArr = data[event.target.name];
-		if(event.target.checked) {
-			newArr.push(event.target.value);
+	const handleChange = (event, name) => {
+		let newLabels = { ...labels };
+		const item = newLabels[event.target.name].find(element => element.name === name);
+		item.checked = !item.checked;
+		setLabels(newLabels);
+	}
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setStatus(0);
+		setError('');
+
+		let cuisines = labels.cuisines.filter(label => label.checked).map(label => label.name);
+		if (otherCuisine && cuisines.indexOf(otherCuisine) < 0) cuisines.push(otherCuisine);
+		let locations = labels.locations.filter(label => label.checked).map(label => label.name);
+		if (otherLocation && locations.indexOf(otherLocation) < 0) locations.push(otherLocation);
+		let categories = labels.categories.filter(label => label.checked).map(label => label.name);
+		if (otherCategory && categories.indexOf(otherCategory) < 0) categories.push(otherCategory);
+		setData({ cuisine: cuisines, category: categories, location: locations });
+
+		if (validateInput({ cuisine: cuisines, category: categories, location: locations })) {
+			const info = {
+				name,
+				cuisine: cuisines,
+				category: data.category,
+				location: data.location,
+				price: Number(price),
+				rating: Number(rating)
+			};
+
+			const tempResults = await searchGoogle(info, props.center);
+			setResults(tempResults);
+		}
+	}
+
+	const addLocation = async (latlng, index) => {
+		const info = {
+			name,
+			cuisine: data.cuisine,
+			category: data.category,
+			location: data.location,
+			lat: latlng.lat,
+			lng: latlng.lng,
+			price: Number(price),
+			rating: Number(rating)
+		};
+
+		const { error } = addData(info);
+
+		if (error) {
+			console.log(error);
+			setError(error);
+			setStatus(3);
 		} else {
-			newArr.splice(newArr.indexOf(event.target.value));
-		}
-		setData({...data, [event.target.name]: newArr});
-	}
-
-	const handleSubmit = (e) => {
-	    e.preventDefault();
-	    setStatus(0);
-	    setError('');
-
-	    if(validateInput()) {
-		    if(otherCuisine && data.cuisine.indexOf(otherCuisine) < 0) data.cuisine.push(otherCuisine);
-		    if(otherLocation && data.location.indexOf(otherLocation) < 0) data.location.push(otherLocation);
-		    if(otherCategory && data.category.indexOf(otherCategory) < 0) data.category.push(otherCategory);
-
-		    const info = {
-		      name,
-		      cuisine: data.cuisine.reduce((prev, cur) => prev + '|' + cur),
-		      category: data.category.reduce((prev, cur) => prev + '|' + cur),
-		      location: data.location,
-		      price: Number(price),
-		      rating: Number(rating)
-		    };
-
-		    const url = 'http://localhost:8000/' + cityNames[props.city];
-
-		    axios
-		      .post(url, info)
-		      .then((res) => {
-		      	console.log(res);
-		      	if(res.data === 'success!') {
-		      		setStatus(2);
-		      		clearForm();
-		      	} else {
-		      		setStatus(3);
-		      		setError(res.data);
-		      	}
-		      })
-		      .catch(err => {
-		        console.log(err);
-		        setStatus(3);
-		      });
+			setStatus(2);
+			let tempResults = [...results];
+			tempResults[index].success = true
+			setResults(tempResults);
 		}
 	}
 
-	const validateInput = () => {
-		if(data.cuisine.length <= 0 && !otherCuisine) {
+	const validateInput = (inputData) => {
+		if (inputData.cuisine.length <= 0) {
 			setError('No cuisines were selected.');
-		} else if(data.category.length <= 0 && !otherCategory) {
+		} else if (inputData.category.length <= 0) {
 			setError('No categories were selected.');
-		} else if(data.location.length <= 0 && !otherLocation) {
+		} else if (inputData.location.length <= 0) {
 			setError('No locations were selected.');
-		} else if(!name) {
+		} else if (!name) {
 			setError('You must include a name.');
-		} else if(props.restaurants.findIndex(res => res.name === name) >= 0) {
+		} else if (props.restaurants.findIndex(res => res.name === name) >= 0) {
 			setError('You already added that restaurant.');
 		} else {
 			return true;
@@ -129,65 +137,119 @@ function Input(props) {
 			location: []
 		});
 		setPrice(0);
+		setRating(0.0);
 		setOtherCuisine('');
 		setOtherLocation('');
+		labels.cuisines.forEach(cuisine => cuisine.checked = false);
+		labels.locations.forEach(location => location.checked = false);
+		labels.categories.forEach(category => category.checked = false);
 		document.getElementById("input-form").reset();
 	}
 
 	return (
-		<div className={"input-form" + (open ? "" : " minimized")}>
-			<div className="minimize-icon" onClick={() => setOpen(!open)}>{open ? "–" : "+"}</div>
-			<form onSubmit={handleSubmit} id="input-form">
-				<div className="input-section title">
-					<p>What is the name of the restuarant?</p>
-					<input type="text" value={name} onChange={updateName} />
-				</div>
-				<div className="input-section">
-					<p>What cuisine is this restuarant?</p>
-					<div className="input-options" style={{height: (props.labels.cuisines.length/2 * 25 + 20) + 'px'}}>
-						{props.labels.cuisines.map((cuisine) =>
-							<label><input type="checkbox" name="cuisine" value={cuisine} onChange={handleChange} />{cuisine}</label>
-						)}
-						<label><input type="checkbox" checked={otherCuisine} />Other:<input type="text" value={otherCuisine} onChange={e => setOtherCuisine(e.target.value)}/></label>
+		<>
+			{results.length > 0 ?
+				<div className="dialog-wrapper">
+					<div className="dialog input">
+						<p className="close" onClick={() => setResults([])}><img src={xPic} style={{ width: '10px' }} alt="close" /></p>
+						{results.map((loc, i) => {
+							return (
+								<div style={{ display: "flex" }}>
+									<div>
+										<h3>{loc.displayName}</h3>
+										<p>{loc.addressComponents.reduce((agg, curr) => agg += curr.longText + ", ", "")}</p>
+										<p>Price Level: {loc.priceLevel}</p>
+										<p>Business Status: {loc.businessStatus}</p>
+									</div>
+									<button className={loc.success ? "success-button" : ""} onClick={() => addLocation(loc.location, i)}>+</button>
+								</div>
+							)
+						})}
+						{status >= 1 ?
+							<div className={"status-bar " + statuses[status].class}>
+								<p>{status === 2 ? statuses[status].message : errorMessage}</p>
+							</div>
+							:
+							<></>
+						}
 					</div>
 				</div>
-				<div className="input-section">
-					<p>What categories does it fall under?</p>
-					<div className="input-options" style={{height: (props.labels.categories.length/2 * 25 + 20) + 'px'}}>
-						{props.labels.categories.map((category) =>
-							<label><input type="checkbox" name="category" value={category} onChange={handleChange} />{category}</label>
-						)}
-						<label><input type="checkbox" checked={otherCategory} />Other:<input type="text" value={otherCategory} onChange={e => setOtherCategory(e.target.value)}/></label>
+				:
+				<></>
+			}
+			<div className={"input-form" + (open ? "" : " minimized")}>
+				<div className="minimize-icon" onClick={() => setOpen(!open)}>{open ? "–" : "+"}</div>
+				<form onSubmit={handleSubmit} id="input-form">
+					<div className="input-section title">
+						<p>What is the name of the restuarant?</p>
+						<input type="text" value={name} onChange={updateName} />
 					</div>
-				</div>
-				<div className="input-section">
-					<p>Where are the locations?</p>
-					<div className="input-options" style={{height: (props.labels.locations.length/2 * 25 + 20) + 'px'}}>
-						{props.labels.locations.map((location) =>
-							<label><input type="checkbox" name="location" value={location} onChange={handleChange} />{location}</label>
-						)}
-						<label><input type="checkbox" checked={otherLocation} />Other:<input type="text" value={otherLocation} onChange={e => setOtherLocation(e.target.value)}/></label>
+					<div className="input-section">
+						<p>What cuisine is this restuarant?</p>
+						<div className="input-options" style={{ height: (labels.cuisines.length / 2 * 25 + 20) + 'px' }}>
+							{labels.cuisines.map((cuisine) =>
+								<label>
+									<input type="checkbox" name="cuisines" value={cuisine.name} onChange={(e) => handleChange(e, cuisine.name)} checked={!!cuisine.checked} />
+									{cuisine.name}
+								</label>
+							)}
+							<label>
+								<input type="checkbox" checked={otherCuisine} />
+								Other:<input type="text" value={otherCuisine} onChange={e => setOtherCuisine(e.target.value)} />
+							</label>
+						</div>
 					</div>
-				</div>
-				<div className="input-section">
-					<p>What price range is it?</p>
-					<input type="number" min="1" max="4" value={price} onChange={e => setPrice(e.target.value)} />
-				</div>
-				<div className="input-section">
-					<p>What would you rate it out of 5?</p>
-					<input type="number" min="0.0" max="5.0" value={rating} step="0.1" onChange={e => setRating(e.target.value)} />
-				</div>
-				<input type="reset" onClick={clearForm}/>
-				<input type="submit"/>
-				{status >= 1 ?
-					<div className={"status-bar " + statuses[status].class}>
-						<p>{status === 2 ? statuses[status].message : errorMessage}</p>
+					<div className="input-section">
+						<p>What categories does it fall under?</p>
+						<div className="input-options" style={{ height: (labels.categories.length / 2 * 25 + 20) + 'px' }}>
+							{labels.categories.map((category) =>
+								<label>
+									<input type="checkbox" name="categories" value={category.name} onChange={(e) => handleChange(e, category.name)} checked={!!category.checked} />
+									{category.name}
+								</label>
+							)}
+							<label>
+								<input type="checkbox" checked={otherCategory} />
+								Other:
+								<input type="text" value={otherCategory} onChange={e => setOtherCategory(e.target.value)} />
+							</label>
+						</div>
 					</div>
-					:
-					<></>
-				}
-			</form>
-		</div>
+					<div className="input-section">
+						<p>Where are the locations?</p>
+						<div className="input-options" style={{ height: (labels.locations.length / 2 * 25 + 20) + 'px' }}>
+							{labels.locations.map((location) =>
+								<label>
+									<input type="checkbox" name="locations" value={location.name} onChange={(e) => handleChange(e, location.name)} checked={!!location.checked} />
+									{location.name}
+								</label>
+							)}
+							<label>
+								<input type="checkbox" checked={otherLocation} />
+								Other:<input type="text" value={otherLocation} onChange={e => setOtherLocation(e.target.value)} />
+							</label>
+						</div>
+					</div>
+					<div className="input-section">
+						<p>What price range is it?</p>
+						<input type="number" min="1" max="4" value={price} onChange={e => setPrice(e.target.value)} />
+					</div>
+					<div className="input-section">
+						<p>What would you rate it out of 5?</p>
+						<input type="number" min="0.0" max="5.0" value={rating} step="0.1" onChange={e => setRating(e.target.value)} />
+					</div>
+					<input type="reset" onClick={clearForm} />
+					<input type="submit" />
+					{status >= 1 ?
+						<div className={"status-bar " + statuses[status].class}>
+							<p>{status === 2 ? statuses[status].message : errorMessage}</p>
+						</div>
+						:
+						<></>
+					}
+				</form>
+			</div>
+		</>
 	);
 }
 

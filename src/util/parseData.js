@@ -4,15 +4,15 @@ const parse = (str) => {
 	data = data.filter(d => d.length >= 7);
 	let output = data.map((d, index)=>{
 		let obj = {};
-		headers.map((h,i)=> {
-			if(headers[i] === "cuisine" || headers[i] === "location" || headers[i] === "category") {
+		headers.forEach((h,i)=> {
+			if(h === "cuisine" || h === "location" || h === "category") {
 				let arr = d[i].split('|');
-				obj[headers[i]] = arr;
-			} else if(headers[i] === "lat" || headers[i] === "lng") {
-				obj[headers[i]] = parseFloat(d[i]);
+				obj[h] = arr;
+			} else if(h === "lat" || h === "lng") {
+				obj[h] = parseFloat(d[i]);
 			} else {
 				let str = d[i].trim();
-				obj[headers[i]] = str;
+				obj[h] = str;
 			}
 		});
 		obj.id = index;
@@ -32,7 +32,7 @@ const extractProp = (prop, arr) => {
 		}
 	}
 	temp.sort();
-	return temp;
+	return temp.map(label => ({name: label, checked: false}));
 };
 
 const multiFilter = (arr, prop, filters) => {

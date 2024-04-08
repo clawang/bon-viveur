@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
-import {extractProp} from './parseData';
+import React, { useEffect, useState } from 'react';
 import Loading from './Loading';
 
 function ListMode(props) {
@@ -14,7 +13,7 @@ function ListMode(props) {
 
 	return (
 		<div className="eateries-wrapper">
-			{props.loaded ? 
+			{props.loaded ?
 				curRes.map((res, i) => <Eatery res={res} fetchData={props.fetchData} key={i} index={i} />)
 				:
 				<Loading />
@@ -27,7 +26,7 @@ function Eatery(props) {
 
 	const strToPrice = () => {
 		let str = "";
-		for(let i = 0; i < props.res.price; i++) {
+		for (let i = 0; i < props.res.price; i++) {
 			str += "$";
 		}
 		return str;
@@ -38,23 +37,19 @@ function Eatery(props) {
 			<div className="eatery-content">
 				<h3 onClick={() => props.fetchData(props.res)}>{props.res.name}</h3>
 				<p className="eatery-cuisines">{props.res.cuisine.map((c, i) => {
-					if(i === 0) return c;
+					if (i === 0) return c;
 					return ", " + c;
 				})} | {strToPrice()}</p>
-				<p>{props.res.location.map((c, i) => {
-					if(i === 0) return c;
-					return ", " + c;
-				})}</p>
+				<p>{
+					props.res.location
+						.map((c, i) => {
+							if (i === 0) return c;
+							return ", " + c;
+						})
+				}</p>
 			</div>
-			{/*{props.index === 0 ? 
-				<div className="eatery-banner">
-					<p>TOP RECOMMENDATION</p>
-				</div>
-				:
-				<></>*/
-			}
 		</div>
 	);
 }
 
-export {Eatery, ListMode};
+export { Eatery, ListMode };

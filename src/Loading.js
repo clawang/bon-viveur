@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 
-function Loading(props) {
+function Loading() {
 	return (
 		<div className="loading-wrapper">
 			<div className="loading"></div>
