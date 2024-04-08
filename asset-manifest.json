@@ -1,32 +1,29 @@
 {
   "files": {
-    "main.css": "/bon-viveur/static/css/main.4d6db650.chunk.css",
-    "main.js": "/bon-viveur/static/js/main.22e8b711.chunk.js",
-    "main.js.map": "/bon-viveur/static/js/main.22e8b711.chunk.js.map",
-    "runtime-main.js": "/bon-viveur/static/js/runtime-main.3fa6cd0e.js",
-    "runtime-main.js.map": "/bon-viveur/static/js/runtime-main.3fa6cd0e.js.map",
-    "static/js/2.fde6e749.chunk.js": "/bon-viveur/static/js/2.fde6e749.chunk.js",
-    "static/js/2.fde6e749.chunk.js.map": "/bon-viveur/static/js/2.fde6e749.chunk.js.map",
-    "static/js/3.6589ba7d.chunk.js": "/bon-viveur/static/js/3.6589ba7d.chunk.js",
-    "static/js/3.6589ba7d.chunk.js.map": "/bon-viveur/static/js/3.6589ba7d.chunk.js.map",
+    "main.css": "/bon-viveur/static/css/main.80e2b8ce.chunk.css",
+    "main.js": "/bon-viveur/static/js/main.8bd65684.chunk.js",
+    "main.js.map": "/bon-viveur/static/js/main.8bd65684.chunk.js.map",
+    "runtime-main.js": "/bon-viveur/static/js/runtime-main.3fae3d9d.js",
+    "runtime-main.js.map": "/bon-viveur/static/js/runtime-main.3fae3d9d.js.map",
+    "static/js/2.ea6b67e3.chunk.js": "/bon-viveur/static/js/2.ea6b67e3.chunk.js",
+    "static/js/2.ea6b67e3.chunk.js.map": "/bon-viveur/static/js/2.ea6b67e3.chunk.js.map",
+    "static/js/3.299a5abd.chunk.js": "/bon-viveur/static/js/3.299a5abd.chunk.js",
+    "static/js/3.299a5abd.chunk.js.map": "/bon-viveur/static/js/3.299a5abd.chunk.js.map",
     "index.html": "/bon-viveur/index.html",
-    "static/css/main.4d6db650.chunk.css.map": "/bon-viveur/static/css/main.4d6db650.chunk.css.map",
-    "static/js/2.fde6e749.chunk.js.LICENSE.txt": "/bon-viveur/static/js/2.fde6e749.chunk.js.LICENSE.txt",
+    "static/css/main.80e2b8ce.chunk.css.map": "/bon-viveur/static/css/main.80e2b8ce.chunk.css.map",
+    "static/js/2.ea6b67e3.chunk.js.LICENSE.txt": "/bon-viveur/static/js/2.ea6b67e3.chunk.js.LICENSE.txt",
     "static/media/style.scss": "/bon-viveur/static/media/MaisonNeue-Book.941caedd.ttf",
-    "static/media/Restaurants.942af10a.csv": "/bon-viveur/static/media/Restaurants.942af10a.csv",
     "static/media/close.3db1d2dc.png": "/bon-viveur/static/media/close.3db1d2dc.png",
     "static/media/halfstar.f2b5f456.png": "/bon-viveur/static/media/halfstar.f2b5f456.png",
     "static/media/mappin.5c365d0f.png": "/bon-viveur/static/media/mappin.5c365d0f.png",
     "static/media/phone.d3374a1e.png": "/bon-viveur/static/media/phone.d3374a1e.png",
-    "static/media/sfRestaurants.2afa15e8.csv": "/bon-viveur/static/media/sfRestaurants.2afa15e8.csv",
     "static/media/unfilled.35da6e04.png": "/bon-viveur/static/media/unfilled.35da6e04.png",
-    "static/media/world.4ead11dc.csv": "/bon-viveur/static/media/world.4ead11dc.csv",
     "static/media/yelp.dd33b665.png": "/bon-viveur/static/media/yelp.dd33b665.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.3fa6cd0e.js",
-    "static/js/2.fde6e749.chunk.js",
-    "static/css/main.4d6db650.chunk.css",
-    "static/js/main.22e8b711.chunk.js"
+    "static/js/runtime-main.3fae3d9d.js",
+    "static/js/2.ea6b67e3.chunk.js",
+    "static/css/main.80e2b8ce.chunk.css",
+    "static/js/main.8bd65684.chunk.js"
   ]
 }
