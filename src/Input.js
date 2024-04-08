@@ -41,6 +41,7 @@ function Input(props) {
 	const [open, setOpen] = useState(true);
 	const [results, setResults] = useState([]);
 	const [labels, setLabels] = useState(props.labels);
+	const [output, setOutput] = useState("");
 
 	useEffect(() => {
 		setLabels(props.labels);
@@ -85,30 +86,27 @@ function Input(props) {
 		}
 	}
 
-	const addLocation = async (latlng, index) => {
-		const info = {
+	const addLocation = async (locData, index) => {
+		console.log(locData);
+
+		const info = [
 			name,
-			cuisine: data.cuisine,
-			category: data.category,
-			location: data.location,
-			lat: latlng.lat,
-			lng: latlng.lng,
-			price: Number(price),
-			rating: Number(rating)
-		};
+			data.cuisine.reduce((prev, cur) => prev + '|' + cur),
+			data.category.reduce((prev, cur) => prev + '|' + cur),
+			locData.addressComponents?.filter(component => component.types.includes("neighborhood"))?.[0]?.longText,
+			locData.addressComponents?.filter(component => component.types.includes("locality"))?.[0]?.longText,
+			price,
+			locData.location.lat,
+			locData.location.lng,
+			rating
+		];
 
-		const { error } = addData(info);
+		setOutput(output.concat(info.join(",") + "\n"));
 
-		if (error) {
-			console.log(error);
-			setError(error);
-			setStatus(3);
-		} else {
-			setStatus(2);
-			let tempResults = [...results];
-			tempResults[index].success = true
-			setResults(tempResults);
-		}
+		let tempResults = [...results];
+		tempResults[index].success = true
+		setResults(tempResults);
+		// }
 	}
 
 	const validateInput = (inputData) => {
@@ -116,8 +114,8 @@ function Input(props) {
 			setError('No cuisines were selected.');
 		} else if (inputData.category.length <= 0) {
 			setError('No categories were selected.');
-		} else if (inputData.location.length <= 0) {
-			setError('No locations were selected.');
+			// } else if (inputData.location.length <= 0) {
+			// 	setError('No locations were selected.');
 		} else if (!name) {
 			setError('You must include a name.');
 		} else if (props.restaurants.findIndex(res => res.name === name) >= 0) {
@@ -139,7 +137,7 @@ function Input(props) {
 		setPrice(0);
 		setRating(0.0);
 		setOtherCuisine('');
-		setOtherLocation('');
+		setOtherCategory('');
 		labels.cuisines.forEach(cuisine => cuisine.checked = false);
 		labels.locations.forEach(location => location.checked = false);
 		labels.categories.forEach(category => category.checked = false);
@@ -161,7 +159,7 @@ function Input(props) {
 										<p>Price Level: {loc.priceLevel}</p>
 										<p>Business Status: {loc.businessStatus}</p>
 									</div>
-									<button className={loc.success ? "success-button" : ""} onClick={() => addLocation(loc.location, i)}>+</button>
+									<button className={loc.success ? "success-button" : ""} onClick={() => addLocation(loc, i)}>+</button>
 								</div>
 							)
 						})}
@@ -186,7 +184,7 @@ function Input(props) {
 					</div>
 					<div className="input-section">
 						<p>What cuisine is this restuarant?</p>
-						<div className="input-options" style={{ height: (labels.cuisines.length / 2 * 25 + 20) + 'px' }}>
+						<div className="input-options" style={{ height: (labels.cuisines.length / 2 * 25 + 40) + 'px' }}>
 							{labels.cuisines.map((cuisine) =>
 								<label>
 									<input type="checkbox" name="cuisines" value={cuisine.name} onChange={(e) => handleChange(e, cuisine.name)} checked={!!cuisine.checked} />
@@ -201,7 +199,7 @@ function Input(props) {
 					</div>
 					<div className="input-section">
 						<p>What categories does it fall under?</p>
-						<div className="input-options" style={{ height: (labels.categories.length / 2 * 25 + 20) + 'px' }}>
+						<div className="input-options" style={{ height: (labels.categories.length / 2 * 25 + 40) + 'px' }}>
 							{labels.categories.map((category) =>
 								<label>
 									<input type="checkbox" name="categories" value={category.name} onChange={(e) => handleChange(e, category.name)} checked={!!category.checked} />
@@ -215,9 +213,9 @@ function Input(props) {
 							</label>
 						</div>
 					</div>
-					<div className="input-section">
+					{/* <div className="input-section">
 						<p>Where are the locations?</p>
-						<div className="input-options" style={{ height: (labels.locations.length / 2 * 25 + 20) + 'px' }}>
+						<div className="input-options" style={{ height: (labels.locations.length / 2 * 25 + 40) + 'px' }}>
 							{labels.locations.map((location) =>
 								<label>
 									<input type="checkbox" name="locations" value={location.name} onChange={(e) => handleChange(e, location.name)} checked={!!location.checked} />
@@ -229,7 +227,7 @@ function Input(props) {
 								Other:<input type="text" value={otherLocation} onChange={e => setOtherLocation(e.target.value)} />
 							</label>
 						</div>
-					</div>
+					</div> */}
 					<div className="input-section">
 						<p>What price range is it?</p>
 						<input type="number" min="1" max="4" value={price} onChange={e => setPrice(e.target.value)} />
@@ -248,6 +246,10 @@ function Input(props) {
 						<></>
 					}
 				</form>
+			</div>
+			<div className="csv-text">
+				<h2>Output:</h2>
+				<textarea readOnly value={output}></textarea>
 			</div>
 		</>
 	);

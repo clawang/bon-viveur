@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { extractProp } from './util/parseData';
+import { extractProp, parse } from './util/parseData';
 import { ListMode } from './ListMode';
 import { getDistance, getLatFromZoom } from './util/mapUtil';
 import { reverseGeocode } from './api/google-maps';
+import restaurantsCSV from './assets/restaurants.csv';
 import Menu from './Menu';
 import Input from './Input';
 import MapMode from './MapMode';
@@ -18,7 +19,6 @@ import phone from './assets/phone.png';
 import yelp from './assets/yelp.png';
 import xPic from './assets/close.png';
 import './style.scss';
-import { getRestaurants } from './api/firebase';
 
 const cityData = [
 	{
@@ -64,12 +64,13 @@ function App() {
 	const [cityName, setCityName] = useState("");
 	const [center, setCenter] = useState(cityData[city].location);
 	const [zoom, setZoom] = useState(cityData[city].zoom);
-	const devMode = false;
+	const devMode = true;
 
 	const pastLocation = useRef({ lat: 0, lng: 0 });
 
 	useEffect(() => {
-		getRestaurantsFromFirestore();
+		// getRestaurantsFromFirestore();
+		csvJSON();
 	}, []);
 
 	useEffect(() => {
@@ -93,9 +94,15 @@ function App() {
 		}
 	}, [appState]);
 
-	const getRestaurantsFromFirestore = async () => {
-		const output = await getRestaurants();
-		// console.log(output);
+	const csvJSON = () => {
+		const csvName = restaurantsCSV;
+		fetch(csvName)
+		.then(response => response.text())
+		.then(transform);
+	}
+
+	const transform = (str) => {
+		let output = parse(str);
 		setRes(output);
 		setCurRes(output.filter(value =>
 			getDistance({ lat: value.lat, lng: value.lng }, center) < getLatFromZoom(zoom) / 35000

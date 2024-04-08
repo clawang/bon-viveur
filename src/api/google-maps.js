@@ -10,9 +10,10 @@ export async function searchPlace(query, locationsCount, center) {
     };
     //@ts-ignore
     const { places } = await Place.searchByText(request);
+    console.log(places);
 
     if (places.length > 0) {
-        return places.slice(0, locationsCount + 1);
+        return places;
     }
 }
 

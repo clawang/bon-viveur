@@ -36,17 +36,12 @@ function Eatery(props) {
 		<div className={"eatery "/* + (props.index === 0 ? "best" : "")*/}>
 			<div className="eatery-content">
 				<h3 onClick={() => props.fetchData(props.res)}>{props.res.name}</h3>
-				<p className="eatery-cuisines">{props.res.cuisine.map((c, i) => {
+				<p className="eatery-cuisines">{strToPrice()} | {props.res.cuisine.map((c, i) => {
 					if (i === 0) return c;
 					return ", " + c;
-				})} | {strToPrice()}</p>
-				<p>{
-					props.res.location
-						.map((c, i) => {
-							if (i === 0) return c;
-							return ", " + c;
-						})
-				}</p>
+				})}</p>
+				<p className="eatery-city">{props.res.city}</p>
+				<p className="eatery-locations">{props.res.location.join(", ")}</p>
 			</div>
 		</div>
 	);
