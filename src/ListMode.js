@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Loading from './Loading';
 
 function ListMode(props) {
-
-	const [curRes, setCurRes] = useState([]);
-
-	useEffect(() => {
+	const filterRestaurants = () => {
 		let temp = props.restaurants;
-		temp = temp.filter((r, i, arr) => arr.findIndex(f => f.name === r.name) === i);
-		setCurRes(temp);
-	}, [props.restaurants]);
+		return temp.filter((r, i, arr) => arr.findIndex(f => f.name === r.name) === i);
+	};
+
+	const curRes = filterRestaurants();
 
 	return (
 		<div className="eateries-wrapper">

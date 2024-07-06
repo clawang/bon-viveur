@@ -625,6 +625,15 @@ select {
 	}
 }
 
+.gm-style-iw-chr {
+	position: absolute;
+	right: 0px;
+}
+
+.gm-style .gm-style-iw-d {
+	padding-top: 15px;
+}
+
 @keyframes slide {
 	0% {transform: scaleX(0)}
 	100% {transform: scaleX(1)}

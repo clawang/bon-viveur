@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { extractProp, parse } from './util/parseData';
 import { ListMode } from './ListMode';
 import { getDistance, getLatFromZoom } from './util/mapUtil';
+import {multiFilter} from './util/parseData';
 import { reverseGeocode } from './api/google-maps';
 import restaurantsCSV from './assets/restaurants.csv';
 import Menu from './Menu';
@@ -43,16 +44,20 @@ const cityData = [
 	}
 ];
 
+const subcategories = {
+	'Asian': ['Southeast Asian', 'Chinese', 'Japanese', 'Korean', 'Taiwanese', 'Thai', 'Vietnamese', 'Filipino', 'Indian', 'Nepalese'],
+	'Southeast Asian': ['Thai', 'Vietnamese', 'Filipino', 'Malaysian', 'Burmese', 'Laotian'],
+	'American': ['Southern'],
+	'Chinese': ['Dim Sum'],
+	'Scandinavian': ['Danish'],
+	'Latin American': ['South American','Mexican','Peruvian','Venezuelan','Salvadoran'],
+	'South American': ['Peruvian','Venezuelan','Brazilian','Argentinian']
+};
+
 function App() {
 	const [restaurants, setRes] = useState([]);
 	const [loaded, setLoaded] = useState(false);
 	const [list, setList] = useState(false);
-	const [labels, setLabels] = useState({
-		cuisines: [],
-		categories: [],
-		locations: []
-	});
-	const [curRes, setCurRes] = useState([]);
 	const [appState, setAppState] = useState({
 		open: false,
 		loading: false,
@@ -60,11 +65,19 @@ function App() {
 		data: {},
 		rest: {}
 	});
+	const [filters, setFilters] = useState({
+		cuisine: "All",
+		category: "All",
+		location: [],
+		price: "All",
+		name: "",
+		sort: "rating"
+	});
 	const [city, setCity] = useState(1); //0 is nyc, 1 is sf, 2 is world
 	const [cityName, setCityName] = useState("");
 	const [center, setCenter] = useState(cityData[city].location);
 	const [zoom, setZoom] = useState(cityData[city].zoom);
-	const devMode = true;
+	const devMode = false;
 
 	const pastLocation = useRef({ lat: 0, lng: 0 });
 
@@ -73,9 +86,59 @@ function App() {
 		csvJSON();
 	}, []);
 
-	useEffect(() => {
-		filterRestaurants();
-	}, [restaurants, center, zoom]);
+	const getLabels = () => {
+		const tempRestaurants = restaurants.filter(value =>
+			getDistance({ lat: value.lat, lng: value.lng }, center) < getLatFromZoom(zoom) / 35000
+		);
+		let cuisinesTemp = extractProp("cuisine", tempRestaurants, true);
+		let catTemp = extractProp("category", tempRestaurants, true);
+		let locationsTemp = extractProp("location", tempRestaurants, false);
+		return { cuisines: [...cuisinesTemp], categories: [...catTemp], locations: [...locationsTemp] };
+	}
+
+	const labels = useMemo(() => getLabels(), [restaurants, center, zoom]);
+
+	const filter = () => {
+		let tempArr = restaurants.filter(value =>
+			getDistance({ lat: value.lat, lng: value.lng }, center) < getLatFromZoom(zoom) / 35000
+		);
+		if(filters.name) {
+			tempArr = tempArr.filter(r => r.name.toLowerCase().includes(String(filters.name).toLowerCase()));
+			return tempArr;
+		}
+		if(filters.cuisine !== "All") {
+			if(subcategories.hasOwnProperty(filters.cuisine)) {
+				//console.log('subcat');
+				let subc = subcategories[filters.cuisine];
+				tempArr = tempArr.filter(r => {
+					let bool = false;
+					subc.forEach(sc => {
+						//console.log(sc);
+						if(r.cuisine.includes(sc)) {
+							bool = true;
+						}
+					});
+					if(bool) return true;
+					else return r.cuisine.includes(filters.cuisine);
+				});
+			}
+			else tempArr = tempArr.filter(r => r.cuisine.includes(filters.cuisine));
+		}
+		if(filters.category !== "All") tempArr = tempArr.filter(r => r.category.includes(filters.category));
+		if(filters.location.length > 0) {
+			tempArr = multiFilter(tempArr, 'location', filters.location);
+		}
+		if(filters.price !== "All") tempArr = tempArr.filter(r => r.price === filters.price);
+		if(tempArr[0]) {
+			tempArr[0].best = true;
+		}
+		if(filters.sort === "rating") {
+			tempArr.sort((a,b) => Number(b.rating) - Number(a.rating));
+		}
+		return tempArr;
+	}
+
+	const curRes = useMemo(() => filter(), [restaurants, filters, center]);
 
 	useEffect(() => {
 		setCenter(cityData[city].location);
@@ -104,25 +167,11 @@ function App() {
 	const transform = (str) => {
 		let output = parse(str);
 		setRes(output);
-		setCurRes(output.filter(value =>
-			getDistance({ lat: value.lat, lng: value.lng }, center) < getLatFromZoom(zoom) / 35000
-		));
 		setLoaded(true);
 	}
 
 	const fetchData = (rest) => {
 		loadData(rest, appState, setAppState);
-	}
-
-	const filterRestaurants = () => {
-		const tempRestaurants = restaurants.filter(value =>
-			getDistance({ lat: value.lat, lng: value.lng }, center) < getLatFromZoom(zoom) / 35000
-		);
-		let cuisinesTemp = extractProp("cuisine", tempRestaurants, true);
-		let catTemp = extractProp("category", tempRestaurants, true);
-		let locationsTemp = extractProp("location", tempRestaurants, false);
-		const newLabels = { cuisines: [...cuisinesTemp], categories: [...catTemp], locations: [...locationsTemp] };
-		setLabels(newLabels);
 	}
 
 	const getCityName = async () => {
@@ -144,15 +193,13 @@ function App() {
 				<h1>BON VIVEUR</h1>
 				<h2>{cityName ?? cityData[city].name}</h2>
 				<Menu
-					setRes={setCurRes}
-					restaurants={restaurants}
 					cities={cityData}
 					city={city}
 					setCity={setCity}
+					filters={filters}
+					setFilters={setFilters}
 					labels={labels}
 					devMode={devMode}
-					center={center}
-					zoom={zoom}
 				/>
 				{devMode ? <Input labels={labels} city={city} restaurants={curRes} center={center} /> : <></>}
 			</div>
@@ -168,8 +215,6 @@ function App() {
 						restaurants={curRes}
 						fetchData={fetchData}
 						loaded={loaded}
-						center={center}
-						zoom={zoom}
 					/>
 					:
 					<MapMode

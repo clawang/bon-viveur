@@ -1,88 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import {multiFilter} from './util/parseData';
-import { getDistance, getLatFromZoom } from './util/mapUtil';
 import xPic from './assets/close.png';
 
-const subcategories = {
-	'Asian': ['Southeast Asian', 'Chinese', 'Japanese', 'Korean', 'Taiwanese', 'Thai', 'Vietnamese', 'Filipino', 'Indian', 'Nepalese'],
-	'Southeast Asian': ['Thai', 'Vietnamese', 'Filipino', 'Malaysian', 'Burmese', 'Laotian'],
-	'American': ['Southern'],
-	'Chinese': ['Dim Sum'],
-	'Scandinavian': ['Danish'],
-	'Latin American': ['South American','Mexican','Peruvian','Venezuelan','Salvadoran'],
-	'South American': ['Peruvian','Venezuelan','Brazilian','Argentinian']
-};
-
 function Menu(props) {
-	const [filters, setFilters] = useState({
-		cuisine: "All",
-		category: "All",
-		location: [],
-		price: "All",
-		name: "",
-		sort: "rating"
-	});
-
-	useEffect(() => {
-		let tempArr = filter();
-		//console.log(tempArr);
-		props.setRes(tempArr);
-	}, [filters, props.center]);
-
 	const handleChange = (evt, num) => {
-		setFilters({...filters, [evt.target.name]: evt.target.value});
+		props.setFilters({...props.filters, [evt.target.name]: evt.target.value});
 	};
-
-	const filter = () => {
-		let tempArr = props.restaurants.filter(value =>
-			getDistance({ lat: value.lat, lng: value.lng }, props.center) < getLatFromZoom(props.zoom) / 35000
-		);
-		if(filters.name) {
-			tempArr = tempArr.filter(r => r.name.toLowerCase().includes(String(filters.name).toLowerCase()));
-			return tempArr;
-		}
-		if(filters.cuisine !== "All") {
-			if(subcategories.hasOwnProperty(filters.cuisine)) {
-				//console.log('subcat');
-				let subc = subcategories[filters.cuisine];
-				tempArr = tempArr.filter(r => {
-					let bool = false;
-					subc.forEach(sc => {
-						//console.log(sc);
-						if(r.cuisine.includes(sc)) {
-							bool = true;
-						}
-					});
-					if(bool) return true;
-					else return r.cuisine.includes(filters.cuisine);
-				});
-			}
-			else tempArr = tempArr.filter(r => r.cuisine.includes(filters.cuisine));
-		}
-		if(filters.category !== "All") tempArr = tempArr.filter(r => r.category.includes(filters.category));
-		if(filters.location.length > 0) {
-			tempArr = multiFilter(tempArr, 'location', filters.location);
-		}
-		if(filters.price !== "All") tempArr = tempArr.filter(r => r.price === filters.price);
-		if(tempArr[0]) {
-			tempArr[0].best = true;
-		}
-		if(filters.sort === "rating") {
-			tempArr.sort((a,b) => Number(b.rating) - Number(a.rating));
-		}
-		return tempArr;
-	}
 
 	const reset = (e) => {
 		e.preventDefault();
-		setFilters({cuisine: "All", category: "All", location: [], price: "All"});
-	}
-
-	const random = (e) => {
-		e.preventDefault();
-		let tempArr = filter();
-		let index = Math.floor(Math.random() * tempArr.length);
-		props.setRes([tempArr[index]]);
+		props.setFilters({cuisine: "All", category: "All", location: [], price: "All"});
 	}
 
 	return (
@@ -96,25 +22,25 @@ function Menu(props) {
 				</label>
 				<label>
 					Cuisine
-					<select value={filters.cuisine} name="cuisine" onChange={handleChange}>
+					<select value={props.filters.cuisine} name="cuisine" onChange={handleChange}>
 					  <option value="All">All</option>
 					  {props.labels.cuisines.map(c => <option value={c.name}>{c.name}</option>)}
 					</select>
 				</label>
 				<label>
 					Category
-					<select value={filters.category} name="category" onChange={handleChange}>
+					<select value={props.filters.category} name="category" onChange={handleChange}>
 					  <option value="All">All</option>
 					  {props.labels.categories.map(c => <option value={c.name}>{c.name}</option>)}
 					</select>
 				</label>
 				<label>
 					Neighborhood
-					<MultiSelect name={'location'} options={props.labels.locations} filters={filters} setFilters={setFilters} />
+					<MultiSelect name={'location'} options={props.labels.locations} filters={props.filters} setFilters={props.setFilters} />
 				</label>
 				<label>
 					Price
-					<select value={filters.price} name="price" onChange={handleChange}>
+					<select value={props.filters.price} name="price" onChange={handleChange}>
 					  <option value="All">All</option>
 					  <option value="1">$</option>
 					  <option value="2">$$</option>
@@ -124,7 +50,6 @@ function Menu(props) {
 				</label>
 				<div className="button-wrapper">
 					<button onClick={reset}>Reset</button>
-					<button onClick={random}>Random</button>
 				</div>
 			</form>
 			{props.devMode ? 
@@ -133,7 +58,7 @@ function Menu(props) {
 						<input type="text" placeholder="Search name of restaurant" name="name" onChange={handleChange}></input>
 					</label>
 					<label> Sort
-						<select value={filters.sort} name="sort" onChange={handleChange}>
+						<select value={props.filters.sort} name="sort" onChange={handleChange}>
 						  <option value="recent">Recent</option>
 						  <option value="rating">Rating</option>
 						</select>

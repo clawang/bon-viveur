@@ -42,7 +42,7 @@ function Input(props) {
 	const [results, setResults] = useState([]);
 	const [labels, setLabels] = useState(props.labels);
 	const [output, setOutput] = useState("");
-
+	
 	useEffect(() => {
 		setLabels(props.labels);
 	}, [props.labels]);
